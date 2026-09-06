@@ -1,0 +1,68 @@
+/* ---------- Selected artwork ---------- */
+
+.selected-piece {
+    width: min(100% - 2rem, 1100px);
+    margin-inline: auto;
+    padding-block: 2rem;
+}
+
+.selected-piece img {
+    width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+
+/* ---------- About me ---------- */
+
+.about-me {
+    width: min(100% - 2rem, 1100px);
+    margin-inline: auto;
+    padding-block: 4rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-me-text {
+    max-width: 600px;
+}
+
+.about-me-text h1 {
+    margin-top: 0;
+}
+
+.about-me-image img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ---------- Current venues ---------- */
+
+.current-venues {
+    width: min(100% - 2rem, 800px);
+    margin-inline: auto;
+    padding-block: 4rem;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .selected-piece {
+        padding-block: 1rem;
+    }
+
+    .about-me {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-block: 3rem;
+    }
+
+    .current-venues {
+        padding-block: 3rem;
+    }
+}
