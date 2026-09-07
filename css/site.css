@@ -25,16 +25,24 @@ a {
     color: inherit;
 }
 
-
 /* ---------- Header ---------- */
 
 .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
 
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
+
+    background: transparent;
 }
 
 .site-name {
@@ -75,8 +83,8 @@ a {
 @media (max-width: 700px) {
 
     .site-header {
-        align-items: flex-start;
         padding: 1rem;
+        gap: 1rem;
     }
 
     .site-nav {
