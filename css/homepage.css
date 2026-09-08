@@ -1,7 +1,5 @@
 /* ---------- Selected artwork ---------- */
 
-/* ---------- Selected artwork ---------- */
-
 .selected-piece {
     width: 100%;
     margin: 0;
@@ -14,6 +12,7 @@
     width: 100%;
     height: auto;
 }
+
 
 /* ---------- About me ---------- */
 
@@ -50,6 +49,36 @@
     padding-block: 4rem;
 }
 
+
+/* ---------- Contact ---------- */
+
+.contact {
+    width: min(100% - 2rem, 800px);
+    margin-inline: auto;
+    padding-block: 4rem;
+}
+
+.contact h2 {
+    margin-top: 0;
+}
+
+.contact p {
+    margin-bottom: 0.75rem;
+}
+
+.contact a {
+    display: inline-block;
+
+    font-size: 1.1rem;
+
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+#contact {
+    scroll-margin-top: 6rem;
+}
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 700px) {
@@ -61,6 +90,10 @@
     }
 
     .current-venues {
+        padding-block: 3rem;
+    }
+
+    .contact {
         padding-block: 3rem;
     }
 }

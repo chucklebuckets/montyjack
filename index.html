@@ -13,17 +13,17 @@
 
 <body>
     <header class="site-header">
-        <a class="site-name" href="/index.html">Monty Jack</a>
+        <a class="site-name" href="/">Monty Jack</a>
 
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="/index.html">Home</a>
-            <a href="/gallery/index.html">Gallery</a>
-            <a href="/shop/index.html">Shop</a>
-            <a href="/contact/index.html">Contact</a>
+            <a href="/">Home</a>
+            <a href="/gallery/">Gallery</a>
+            <a href="/shop/">Shop</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main>
+    <main class="home-page">
         <!-- Selected artwork display -->
         <section class="selected-piece">
             <img src="/assets/tree_shrew.png" alt="DESCRIBE WHATEVER ARTPIECE HERE">
@@ -31,16 +31,16 @@
 
         <!-- About me section with portrait display -->
         <section class="about-me">
+            <div class="about-me-image">
+                <img src="/assets/dipper.png" alt="DESCRIBE YOUR OWN SELF HERE">
+            </div>
+
             <div class="about-me-text">
                 <h1>Monty Jack/Who am I/About Me/Whatever you want</h1>
 
                 <p>I tend to err on the side of extremely giga stinky but sometimes I only smell moderately bad.</p>
                 
                 <p>I am intolerant to it but dairy is my favorite food group regardless.</p>
-            </div>
-
-            <div class="about-me-image">
-                <img src="/assets/dipper.png" alt="DESCRIBE YOUR OWN SELF HERE">
             </div>
         </section>
 
@@ -51,13 +51,31 @@
             <p>This can kind of contain whatever. Maybe even cards of some kind w/ images of the venues. Or just text descriptions and addresses. Whatevs</p>
         </section>
 
+        <!-- Contact section -->
+        <section class="contact" id="contact">
+            <div class="contact-details">
+                <h2>Contact</h2>
+                <p>
+                    Send me emails about pizza and cheese and pillows:
+                </p>
+                <p>
+                    email:<br>
+                    <a href="mailto:hello@montyjack.com">hello@montyjack.com</a>
+                </p>
+            </div>
+
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <p>&copy; 2026 Monty Jack</p>
 
         <nav aria-label="Social media platforms">
+            <a href="mailto:hello@montyjack.com">Email</a>
             <a href="https://instagram.com">Instagram</a>
         </nav>
     </footer>
+
+    <script src="js/header.js"></script>
 </body>

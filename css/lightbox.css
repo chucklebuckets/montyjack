@@ -1,0 +1,440 @@
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+    --details-width: 380px;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    overflow: hidden;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+
+/* ---------- Main viewer ---------- */
+
+.lightbox-content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3rem 7rem;
+
+    transition: padding-right 0.2s ease;
+}
+
+
+/*
+    When details open, reserve actual screen
+    space for the panel instead of covering
+    the artwork.
+*/
+
+.lightbox.details-open .lightbox-content {
+    padding-right: calc(7rem + var(--details-width));
+}
+
+
+.lightbox-viewer {
+    max-width: 100%;
+    max-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ---------- Artwork ---------- */
+
+.lightbox-artwork {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 100%;
+    max-height: calc(100vh - 7rem);
+}
+
+.lightbox-artwork img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 82vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ---------- Controls beneath artwork ---------- */
+
+.lightbox-controls {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    margin-top: 0.75rem;
+
+    color: white;
+}
+
+
+/*
+    Keeps the image number truly centered,
+    regardless of the Details button.
+*/
+
+.image-index {
+    grid-column: 2;
+
+    font-size: 0.85rem;
+
+    opacity: 0.7;
+}
+
+.details-toggle {
+    grid-column: 3;
+
+    justify-self: end;
+
+    border: 0;
+    border-bottom: 1px solid transparent;
+
+    padding: 0.25rem 0;
+
+    background: none;
+    color: white;
+
+    font: inherit;
+
+    cursor: pointer;
+
+    opacity: 0.75;
+}
+
+.details-toggle:hover,
+.details-toggle[aria-expanded="true"] {
+    opacity: 1;
+    border-bottom-color: currentColor;
+}
+
+
+/* ---------- Close button ---------- */
+
+.lightbox-close {
+    position: fixed;
+
+    top: 1rem;
+    right: 1.5rem;
+
+    z-index: 1030;
+
+    width: 3rem;
+    height: 3rem;
+
+    padding: 0;
+    border: 0;
+
+    background: none;
+    color: white;
+
+    font-size: 2.5rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: right 0.2s ease;
+}
+
+.lightbox.details-open .lightbox-close {
+    right: calc(var(--details-width) + 1.5rem);
+}
+
+
+/* ---------- Shared navigation ---------- */
+
+.image-nav,
+.piece-nav {
+    border: 0;
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 2.5rem;
+
+    opacity: 0.6;
+
+    transition: opacity 0.15s ease;
+}
+
+.image-nav:hover,
+.piece-nav:hover {
+    opacity: 1;
+}
+
+
+/* ---------- Image navigation ---------- */
+
+.image-nav {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    z-index: 1005;
+
+    width: 5rem;
+}
+
+.image-nav-previous {
+    left: -5rem;
+}
+
+.image-nav-next {
+    right: -5rem;
+}
+
+
+/* ---------- Piece navigation ---------- */
+
+.piece-nav {
+    position: fixed;
+
+    top: 15%;
+    bottom: 15%;
+
+    z-index: 1004;
+
+    width: 6rem;
+}
+
+.piece-nav-previous {
+    left: 0;
+}
+
+.piece-nav-next {
+    right: 0;
+
+    transition:
+        right 0.2s ease,
+        opacity 0.15s ease;
+}
+
+
+/*
+    Keep the next-piece arrow beside the artwork
+    rather than underneath the details panel.
+*/
+
+.lightbox.details-open .piece-nav-next {
+    right: var(--details-width);
+}
+
+
+/* ---------- Details panel ---------- */
+
+.details-panel {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    z-index: 1020;
+
+    width: var(--details-width);
+    height: 100%;
+
+    padding: 5rem 2rem 3rem;
+
+    background: rgba(20, 20, 20, 0.98);
+    color: white;
+
+    overflow-y: auto;
+
+    transform: translateX(100%);
+
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 0.2s ease,
+        visibility 0.2s;
+}
+
+.lightbox.details-open .details-panel {
+    transform: translateX(0);
+
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* ---------- Details contents ---------- */
+
+.details-close {
+    position: absolute;
+
+    top: 1rem;
+    right: 1.25rem;
+
+    border: 0;
+
+    background: none;
+    color: white;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+.details-content h2 {
+    margin: 0;
+}
+
+.details-date {
+    margin-top: 0.25rem;
+
+    opacity: 0.7;
+}
+
+.details-meta-row {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 1.5rem;
+}
+
+.details-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+.details-description {
+    margin-top: 2rem;
+}
+
+.details-description p {
+    margin: 0;
+}
+
+.details-venue {
+    margin-top: 2rem;
+}
+
+.details-venue a {
+    color: inherit;
+}
+
+.details-shop {
+    margin-top: 2rem;
+}
+
+.details-shop a {
+    color: inherit;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .lightbox {
+        --details-width: 100%;
+    }
+
+    .lightbox-content {
+        padding: 4rem 3.5rem;
+    }
+
+
+    /*
+        The details panel becomes a bottom sheet.
+    */
+
+    .details-panel {
+        top: auto;
+        bottom: 0;
+
+        width: 100%;
+        height: auto;
+
+        max-height: 65vh;
+
+        padding: 3.5rem 1.5rem 2rem;
+
+        transform: translateY(100%);
+    }
+
+    .lightbox.details-open .details-panel {
+        transform: translateY(0);
+    }
+
+
+    /*
+        Don't reserve horizontal space for a
+        side panel on mobile.
+    */
+
+    .lightbox.details-open .lightbox-content {
+        padding-right: 3.5rem;
+        right: 1.5rem;
+    }
+
+
+    .lightbox.details-open .piece-nav-next {
+        right: 0;
+    }
+
+
+    .lightbox-artwork img {
+        max-height: 78vh;
+    }
+
+
+    .image-nav {
+        width: 3rem;
+
+        font-size: 2rem;
+    }
+
+    .image-nav-previous {
+        left: -3rem;
+    }
+
+    .image-nav-next {
+        right: -3rem;
+    }
+
+
+    .piece-nav {
+        width: 3rem;
+
+        top: 20%;
+        bottom: 20%;
+
+        font-size: 2rem;
+    }
+
+}

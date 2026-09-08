@@ -5,32 +5,202 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gallery—Monty Jack</title>
+    <title>Gallery | Monty Jack</title>
 
     <link rel="stylesheet" href="../css/site.css">
     <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
 </head>
 
 <body>
     <header class="site-header">
-        <a class="site-name" href="../index.html">Monty Jack</a>
+        <a class="site-name" href="../">Monty Jack</a>
 
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="../index.html">Home</a>
-            <a href="../gallery/index.html">Gallery</a>
-            <a href="../shop/index.html">Shop</a>
-            <a href="../contact/index.html">Contact</a>
+            <a href="../">Home</a>
+            <a href="../gallery/">Gallery</a>
+            <a href="../shop/">Shop</a>
+            <a href="../#contact">Contact</a>
         </nav>
     </header>
 
     <main>
 
+        <section class="gallery-page">
 
+            <!-- Header for selecting filtered views -->
+            <div class="gallery-header">
+                <div class="gallery-filters" aria-label="Filter artwork">
+                    <button class="filter-button active" data-filter="all" aria-pressed="true">
+                        All
+                    </button>
+                    <button class="filter-button" data-filter="fine" aria-pressed="false">
+                        Fine Art
+                    </button>
+                    <button class="filter-button" data-filter="3d" aria-pressed="false">
+                        3D
+                    </button>
+                    <button class="filter-button" data-filter="digital" aria-pressed="false">
+                        Digital
+                    </button>
+                    <button class="filter-button" data-filter="photo" aria-pressed="false">
+                        Photography
+                    </button>
+                    <button class="filter-button" data-filter="misc" aria-pressed="false">
+                        Misc.
+                    </button>
+                    <button class="filter-button" data-filter="sketch" aria-pressed="false">
+                        Sketches
+                    </button>
+                </div>
+            </div>
 
+            <!-- Grid where gallery.js inserts pieces -->
+            <div class="gallery-grid" id="gallery-grid"></div>
 
+        </section>
 
     </main>
 
+    <!-- Lightbox -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Artpiece viewer"
+        hidden=""
+    >
+        <!-- Close -->
+        <button
+            class="lightbox-close"
+            id="lightbox-close"
+            aria-label="Close artpiece viewer"
+        >&times;</button>
+
+        <!-- Previous piece -->
+        <button
+            class="piece-nav piece-nav-previous"
+            id="piece-previous"
+            aria-label="Previous artpiece"
+        >&#10094;</button>
+
+        <!-- Next piece -->
+        <button
+            class="piece-nav piece-nav-next"
+            id="piece-next"
+            aria-label="Next artpiece"
+        >&#10095;</button>
+
+
+        <div class="lightbox-content" id="lightbox-content">
+            <div class="lightbox-viewer">
+                <div class="lightbox-artwork">
+                    <!-- Previous image of piece -->
+                    <button
+                        class="image-nav image-nav-previous"
+                        id="image-previous"
+                        aria-label="Previous image"
+                    >&#10094;</button>
+
+                    <!-- Image of piece -->
+                    <img id="lightbox-image" src="" alt="">
+
+                    <!-- Next image of piece -->
+                    <button
+                        class="image-nav image-nav-next"
+                        id="image-next"
+                        aria-label="Next image"
+                    >&#10095;</button>
+                </div>
+                
+                <div class="lightbox-controls">
+                    <span class="image-index" id="image-index"></span>
+
+                    <button
+                        class="details-toggle"
+                        id="details-toggle"
+                        aria-expanded="false"
+                        aria-controls="details-panel"
+                    >Details</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional details panel -->
+        <aside
+            class="details-panel"
+            id="details-panel"
+            aria-hidden="true"
+        >
+            <button
+                class="details-close"
+                id="details-close"
+                aria-label="Close artwork details"
+            >&rarr;</button>
+
+            <div class="details-content">
+                <h2 id="details-title"></h2>
+                <p class="details-date" id="details-date"></p>
+    
+                <div
+                    class="details-meta-row"
+                    id="details-materials-row"
+                    hidden
+                >
+                    <span class="details-label">Materials</span>
+                    <span id="details-materials"></span>
+                </div>
+
+                <div
+                    class="details-meta-row"
+                    id="details-dimensions-row"
+                    hidden
+                >
+                    <span class="details-label">Dimensions</span>
+                    <span id="details-dimensions"></span>
+                </div>
+
+                <div
+                    class="details-description"
+                    id="details-description-section"
+                    hidden
+                >
+                    <p id="details-description"></p>
+                </div>
+
+
+                <div
+                    class="details-venue"
+                    id="details-venue-section"
+                    hidden
+                >
+                    <span class="details-label">
+                        Currently at
+                    </span>
+
+                    <div id="details-venue"></div>
+                </div>
+
+                <div
+                    class="details-shop"
+                    id="details-shop-section"
+                    hidden
+                >
+                    <span class="details-label">
+                        View in Shop
+                    </span>
+
+                    <div id="details-shop"></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+
+    <!-- Footer -->
     <footer class="site-footer">
         <p>&copy; 2026 Monty Jack</p>
 
@@ -38,4 +208,7 @@
             <a href="https://instagram.com">Instagram</a>
         </nav>
     </footer>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
