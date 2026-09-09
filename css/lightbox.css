@@ -355,6 +355,68 @@
     color: inherit;
 }
 
+/* ---------- Lightbox opening animation ---------- */
+
+/* Lightbox background can appear immediately */
+.lightbox:not([hidden]) {
+    animation: lightboxFadeIn 0.25s ease;
+}
+
+
+/* Hide all viewer controls until image dimensions are known */
+
+.lightbox-viewer,
+.lightbox .piece-nav {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* Reveal everything together */
+
+.lightbox.lightbox-ready .lightbox-viewer,
+.lightbox.lightbox-ready .piece-nav {
+    opacity: 1;
+    pointer-events: auto;
+
+    transition: opacity 0.25s ease;
+}
+
+
+@keyframes lightboxFadeIn {
+    from {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        background: rgba(0, 0, 0, 0.92);
+    }
+}
+
+/* ---------- Lightbox image transition ---------- */
+
+.lightbox-artwork img {
+    transition:
+        opacity 0.08s ease,
+        transform 0.08s ease;
+}
+
+.lightbox-artwork img.changing {
+    opacity: 0;
+    transform: scale(0.995);
+}
+
+@keyframes lightboxViewerIn {
+    from {
+        opacity: 0;
+        transform: scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 /* ---------- Mobile ---------- */
 
@@ -435,6 +497,27 @@
         bottom: 20%;
 
         font-size: 2rem;
+    }
+
+}
+
+/* ---------- Reduced motion support ---------- */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lightbox:not([hidden]),
+    .lightbox:not([hidden]) .lightbox-viewer {
+        animation: none;
+    }
+
+    .lightbox-artwork img {
+        transition: none;
+    }
+
+    .lightbox-artwork img.changing {
+        opacity: 1;
+        transform: none;
     }
 
 }

@@ -1,5 +1,6 @@
 /*
 title - REQUIRED - Title of piece
+slug - REQUIRED - Url fragment. EX: "tree-shrew" in "https://montyjack.com/gallery/#tree-shrew"
 date - REQUIRED - Date of piece
 category - REQUIRED - Filter category
 materials - optional - Material/medium used
@@ -14,6 +15,7 @@ alt - REQUIRED - Alt text if image cannot load or for text reader
 const pieces = [
     {
         title: "shrew",
+        slug: "shrew",
         date: "2014",
         category: "3d",
         materials: "Meat, bone, energy",
@@ -38,6 +40,7 @@ const pieces = [
 
     {
         title: "cheesecube",
+        slug: "cheesecube",
         date: "2014",
         category: "fine",
 
@@ -52,6 +55,7 @@ const pieces = [
     },
     {
         title: "monster",
+        slug: "monster",
         date: "2014",
         category: "fine",
 
@@ -113,6 +117,7 @@ function renderGallery(filter = "all") {
 
         const article = document.createElement("article");
         article.classList.add("gallery-piece");
+        article.style.animationDelay = `${Math.min(index * 60, 300)}ms`; // Staggered loading animation w/ cap
 
         const button = document.createElement("button");
         button.classList.add("gallery-piece-button");
@@ -174,24 +179,46 @@ filterButtons.forEach((button) => {
 });
 
 // Lightbox
-function openLightbox(pieceIndex) {
+function openLightbox(pieceIndex, updateUrl = true) {
     currentPieceIndex = pieceIndex;
     currentImageIndex = 0;
 
-    setDetailsOpen(false);
-
-    updateLightbox();
-
-    lightbox.hidden = false;
-    document.body.style.overflow = "hidden";
-}
-
-function updateLightbox() {
     const piece = visiblePieces[currentPieceIndex];
     const image = piece.images[currentImageIndex];
 
-    lightboxImage.src = image
-    lightboxImage.alt = piece.alt
+    if (updateUrl) { window.history.pushState(null, "", `#${piece.slug}`); }
+
+    setDetailsOpen(false);
+
+    lightbox.classList.remove("lightbox-ready");
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+
+    
+
+    lightboxImage.src = image;
+    lightboxImage.alt = piece.alt;
+
+    updateDetails(piece);
+    updateNavigationVisibility();
+
+    imageIndex.textContent = `${currentImageIndex + 1} / ${piece.images.length}`;
+    imageIndex.hidden = piece.images.length <= 1;
+
+    // Wait until the image has actual dimensions before revealing the viewer and arrows.
+    if (lightboxImage.complete) { lightbox.classList.add("lightbox-ready"); }
+    else {
+        lightboxImage.onload = () => {
+            lightbox.classList.add("lightbox-ready");
+        };
+    }
+}
+
+function updateLightbox(animateImage = true) {
+    const piece = visiblePieces[currentPieceIndex];
+    const image = piece.images[currentImageIndex];
+
+    changeLightboxImage(image, piece.alt, animateImage);
 
     // Image counter
     imageIndex.textContent = `${currentImageIndex + 1} / ${piece.images.length}`;
@@ -199,6 +226,26 @@ function updateLightbox() {
     
     updateNavigationVisibility();
     updateDetails(piece);
+}
+
+function changeLightboxImage(src, alt, animate = true) {
+    if (!animate) {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+        return;
+    }
+    lightboxImage.classList.add("changing");
+
+    setTimeout(() => {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+
+        lightboxImage.onload = () => {
+            requestAnimationFrame(() => {
+                lightboxImage.classList.remove("changing");
+            });
+        };
+    }, 120);
 }
 
 function setDetailsOpen(open) {
@@ -233,6 +280,9 @@ function showPreviousPiece() {
     if (currentPieceIndex < 0) { currentPieceIndex = visiblePieces.length - 1; } // Wrap around
 
     currentImageIndex = 0;
+    const piece = visiblePieces[currentPieceIndex];
+
+    window.history.replaceState(null, "", `#${piece.slug}`)
 
     updateLightbox();
 }
@@ -243,6 +293,9 @@ function showNextPiece() {
     if (currentPieceIndex >= visiblePieces.length) { currentPieceIndex = 0; } // Wrap around
 
     currentImageIndex = 0;
+    const piece = visiblePieces[currentPieceIndex];
+
+    window.history.replaceState(null, "", `#${piece.slug}`)
 
     updateLightbox();
 }
@@ -330,9 +383,11 @@ function updateDetails(piece) {
 // Close lightbox
 function closeLightbox() {
     setDetailsOpen(false);
+    lightbox.classList.remove("lightbox-ready");
     lightbox.hidden = true;
     lightboxImage.src = "";
     document.body.style.overflow = "";
+    window.history.replaceState(null, "", window.location.pathname);
 }
 
 
@@ -347,7 +402,7 @@ pieceNext.addEventListener("click", showNextPiece)
 
 // Clicking outside of lightbox to close
 lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox | event.target.classList.contains("lightbox-content")) {
+    if (event.target === lightbox || event.target.classList.contains("lightbox-content")) {
         closeLightbox();
     }
 });
@@ -375,5 +430,36 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") { showNextPiece(); }
 });
 
+// Back arrow
+window.addEventListener("popstate", () => {
+    const slug = window.location.hash.slice(1);
+
+    if (!slug) {
+        if (!lightbox.hidden) {
+            setDetailsOpen(false);
+            lightbox.classList.remove("lightbox-ready");
+            lightbox.hidden = true;
+            lightboxImage.src = "";
+            document.body.style.overflow = "";
+        }
+        return;
+    }
+
+    const index = visiblePieces.findIndex(piece => piece.slug === slug);
+
+    if (index !== -1) { openLightbox(index, false); }
+});
+
+function openPieceFromURL() {
+    const slug = window.location.hash.slice(1);
+
+    if (!slug) { return; }
+
+    const index = visiblePieces.findIndex(piece => piece.slug === slug);
+    
+    if (index !== -1) { openLightbox(index, false); }
+}
+
 // Initial rendering of gallery with All filter
 renderGallery();
+openPieceFromURL();

@@ -67,6 +67,11 @@
 
 .gallery-piece {
     min-width: 0;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    animation: galleryFadeIn 0.5s ease forwards;
 }
 
 .gallery-piece-button {
@@ -154,6 +159,15 @@
     white-space: nowrap;
 }
 
+/* ---------- Animations ---------- */
+
+@keyframes galleryFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ---------- Tablet ---------- */
 
 @media (max-width: 1000px) {
@@ -210,4 +224,14 @@
         max-height: 90vh;
     }
 
+}
+
+/* ---------- Reduced motion support ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-piece {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
 }
