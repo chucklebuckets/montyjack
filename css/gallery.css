@@ -9,6 +9,14 @@
     padding-bottom: 6rem;
 }
 
+/* ---------- Development header ---------- */
+.gallery-notice {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: red;
+}
 
 /* ---------- Gallery header ---------- */
 

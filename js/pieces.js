@@ -14,53 +14,156 @@ alt - REQUIRED - Alt text if image cannot load or for text reader
 */
 const artworks = [
     {
-        title: "shrew",
-        slug: "shrew",
-        date: "2014",
-        category: "3d",
-        materials: "Meat, bone, energy",
-        dimensions: "18ft × 27ft × 10ft",
-        description: "I really like this piece. it all began when I was born. At first, I saw a light.\nI crawled closer to that light. Then I was cold and mad.",
+        title: "UNNAMED",
+        slug: "eye",
+        date: "2022",
+        category: "fine",
+        materials: "Charcoal on paper",
+        dimensions: "...",
+        description: "...",
+
+        thumbnail: "../assets/gallery/eye/1.webp",
+        images: [
+            "../assets/gallery/eye/1.webp",
+        ],
+
+        alt: "Hands holding open eye"
+    },
+    {
+        title: "UNNAMED",
+        slug: "bus",
+        date: "2023",
+        category: "fine",
+        materials: "Colored pencil on paper",
+        dimensions: "...",
+        description: "...",
+
+        thumbnail: "../assets/gallery/bus/1.webp",
+        images: [
+            "../assets/gallery/bus/1.webp",
+        ],
+
+        alt: "Bus in rain"
+    },
+    {
+        title: "HUNGER",
+        slug: "hunger",
+        date: "2023",
+        category: "fine",
+        materials: "Mixed media",
+        dimensions: "...",
+        description: "...",
+
+        thumbnail: "../assets/gallery/hunger/1.webp",
+        images: [
+            "../assets/gallery/hunger/1.webp",
+        ],
+
+        alt: "Green monster and orange blob"
+    },
+    {
+        title: "UNNAMED",
+        slug: "teeth",
+        date: "2023",
+        category: "fine",
+        materials: "Oil on canvas",
+        dimensions: "...",
+        description: "...",
         venue: {
-            name: "Gallery FortyShrew",
-            url: "https://example.com"
+            name: "Madness! 2.0 - Gallery Forty-Two",
+            //url: "..."
         },
 
-        thumbnail: "../assets/gallery/shrew/1.png",
+        thumbnail: "../assets/gallery/teeth/1.webp",
         images: [
-            "../assets/gallery/shrew/1.png",
+            "../assets/gallery/teeth/1.webp",
         ],
 
-        alt: "DESCRIPTION OF CHEESE CUBE"
-    },
-
-    {
-        title: "cheesecube",
-        slug: "cheesecube",
-        date: "2014",
-        category: "fine",
-
-        thumbnail: "../assets/gallery/cheesecube/1.png",
-        images: [
-            "../assets/gallery/cheesecube/1.png",
-            "../assets/gallery/cheesecube/2.png",
-            "../assets/gallery/cheesecube/3.png",
-        ],
-
-        alt: "DESCRIPTION OF CHEESE CUBE"
+        alt: "Ingrown teeth"
     },
     {
-        title: "monster",
-        slug: "monster",
-        date: "2014",
+        title: "UNNAMED",
+        slug: "car",
+        date: "2024",
         category: "fine",
+        materials: "Oil on canvas",
+        dimensions: "...",
+        description: "...",
+        venue: {
+            name: "3rd Annual Art of Speed Juried Exhibition - Gallery Forty-Two",
+            //url: "..."
+        },
 
-        thumbnail: "../assets/gallery/patrick/1.jpg",
+        thumbnail: "../assets/gallery/car/1.webp",
         images: [
-            "../assets/gallery/patrick/1.jpg",
+            "../assets/gallery/car/1.webp",
         ],
 
-        alt: "DESCRIPTION OF CHEESE CUBE"
+        alt: "Car flying through space"
+    },
+    {
+        title: "UNNAMED",
+        slug: "desert",
+        date: "2024",
+        category: "fine",
+        materials: "Oil on canvas",
+        dimensions: "...",
+        description: "...",
+
+        thumbnail: "../assets/gallery/desert/1.webp",
+        images: [
+            "../assets/gallery/desert/1.webp",
+        ],
+
+        alt: "Person crawling on desert planet under sun"
+    },
+    {
+        title: "UNNAMED",
+        slug: "phones",
+        date: "2025",
+        category: "fine",
+        materials: "Oil on canvas",
+        dimensions: "...",
+        description: "...",
+
+        thumbnail: "../assets/gallery/phones/1.webp",
+        images: [
+            "../assets/gallery/phones/1.webp",
+        ],
+
+        alt: "People on phones"
+    },
+    {
+        title: "UNNAMED",
+        slug: "tv",
+        date: "2025",
+        category: "fine",
+        materials: "Watercolor, charcoal, and acrylic on paper",
+        dimensions: "...",
+        description: "...",
+
+        thumbnail: "../assets/gallery/tv/1.webp",
+        images: [
+            "../assets/gallery/tv/1.webp",
+        ],
+
+        alt: "First person perspective of overweight man watching tv in trashed room"
+    },
+    {
+        title: "UNNAMED",
+        slug: "egg",
+        date: "2026",
+        category: "fine",
+        materials: "Oil on canvas",
+        dimensions: "...",
+        description: "...",
+
+        thumbnail: "../assets/gallery/egg/1.webp",
+        images: [
+            "../assets/gallery/egg/1.webp",
+        ],
+
+        alt: "2 fried eggs with faces"
     },
 ];
 

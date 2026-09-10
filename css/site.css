@@ -13,7 +13,7 @@ body {
 }
 
 html {
-    font-family: Arial, sans-serif;
+    font-family: Kazuki Reiwa, serif;
 }
 
 body {
@@ -39,6 +39,25 @@ a {
     color: inherit;
 }
 
+/* ---------- Font ---------- */
+
+@font-face {
+    font-family: "Kazuki Reiwa";
+    src: url("../assets/fonts/KazukiReiwa - Regular.ttf") format("truetype");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Kazuki Reiwa";
+    src: url("../assets/fonts/KazukiReiwa - Regular.ttf") format("truetype");
+
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* ---------- Shared keyboard focus ---------- */
 
