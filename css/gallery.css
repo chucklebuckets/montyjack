@@ -247,3 +247,13 @@
         animation: none;
     }
 }
+
+/* ---------- Gallery shop links ---------- */
+
+.details-shop-product {
+    display: block;
+}
+
+.details-shop-product + .details-shop-product {
+    margin-top: 0.5rem;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop | Monty Jack</title>
+
+    <link rel="stylesheet" href="../../css/site.css">
+    <link rel="stylesheet" href="../../css/product.css">
+
+    <script src="../../js/site.js" defer></script>
+    <script src="../../js/pieces.js" defer></script>
+    <script src="../../js/products.js" defer></script>
+    <script src="../../js/shop-utils.js" defer></script>
+    <script src="../../js/product.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="site-name" href="../../index.html">Monty Jack</a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="../../index.html">Home</a>
+            <a href="../../gallery/index.html">Gallery</a>
+            <a href="../index.html" aria-current="page">Shop</a>
+            <a href="../../contact/index.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="product-page">
+        <nav class="product-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Shop</a>
+            <span aria-hidden="true">›</span>
+            <span
+                class="product-breadcrumb-title"
+                id="product-breadcrumb-title"
+            >
+                Product
+            </span>
+        </nav>
+
+        <section
+            class="product-layout"
+            id="product-layout"
+            hidden
+        >
+            <div class="product-media">
+                <div class="product-image-stage">
+                    <button
+                        class="product-image-nav product-image-previous"
+                        id="product-image-previous"
+                        type="button"
+                        aria-label="Previous product image"
+                        hidden
+                    >
+                        &#10094;
+                    </button>
+
+                    <img
+                        class="product-main-image"
+                        id="product-main-image"
+                        src=""
+                        alt=""
+                    >
+
+                    <div
+                        class="product-image-error"
+                        id="product-image-error"
+                        role="status"
+                        hidden
+                    ></div>
+
+                    <button
+                        class="product-image-nav product-image-next"
+                        id="product-image-next"
+                        type="button"
+                        aria-label="Next product image"
+                        hidden
+                    >
+                        &#10095;
+                    </button>
+                </div>
+
+                <span
+                    class="product-image-index"
+                    id="product-image-index"
+                    aria-live="polite"
+                    hidden
+                ></span>
+
+                <div
+                    class="product-thumbnails"
+                    id="product-thumbnails"
+                    aria-label="Product images"
+                    hidden
+                ></div>
+            </div>
+
+            <div class="product-info">
+                <h1
+                    class="product-title"
+                    id="product-title"
+                ></h1>
+
+                <p
+                    class="product-type"
+                    id="product-type"
+                ></p>
+
+                <p
+                    class="product-price"
+                    id="product-price"
+                ></p>
+
+                <p
+                    class="product-availability"
+                    id="product-availability"
+                ></p>
+
+                <div class="product-details-list">
+                    <p
+                        class="product-detail-item product-shipping-notes"
+                        id="product-shipping-notes"
+                        hidden
+                    ></p>
+
+                    <p
+                        class="product-detail-item"
+                        id="product-dimensions-row"
+                        hidden
+                    >
+                        <span id="product-dimensions"></span>
+                    </p>
+
+                    <p
+                        class="product-detail-item"
+                        id="product-materials-row"
+                        hidden
+                    >
+                        <span id="product-materials"></span>
+                    </p>
+
+                    <p
+                        class="product-detail-item product-packaging"
+                        id="product-packaging"
+                        hidden
+                    ></p>
+
+                    <p
+                        class="product-detail-item product-framing"
+                        id="product-framing"
+                        hidden
+                    ></p>
+
+                    <p
+                        class="product-detail-item product-shipping-price"
+                        id="product-shipping-price"
+                        hidden
+                    ></p>
+                </div>
+
+                <div class="product-checkout">
+                    <p
+                        class="product-variant-note"
+                        id="product-variant-note"
+                        hidden
+                    ></p>
+
+                    <a
+                        class="product-purchase disabled"
+                        id="product-purchase"
+                        aria-disabled="true"
+                    >
+                        Purchase link coming soon
+                    </a>
+
+                    <p
+                        class="product-checkout-note"
+                        id="product-checkout-note"
+                    ></p>
+                </div>
+
+                <div class="product-actions">
+                    <a
+                        id="product-gallery-link"
+                        href=""
+                        hidden
+                    >
+                        View in Gallery
+                    </a>
+
+                    <button
+                        class="product-copy-link"
+                        id="product-copy-link"
+                        type="button"
+                    >
+                        Copy Link
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="product-missing"
+            id="product-missing"
+            hidden
+        >
+            <h1>Product not found</h1>
+
+            <p>
+                This product may no longer be listed.
+            </p>
+
+            <a href="../index.html">Return to Shop</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Monty Jack</p>
+
+        <nav aria-label="Social media platforms">
+            <a href="https://instagram.com">Instagram</a>
+        </nav>
+    </footer>
+</body>
+</html>

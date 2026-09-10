@@ -16,6 +16,7 @@ let currentImageIndex = 0;
 let lastFocusedElement = null;
 let copyLinkResetTimeout = null;
 let imageLoadRequest = 0;
+let lightboxDetailsEnhancer = null;
 
 const baseDocumentTitle = document.title;
 const siteDocumentTitle = document.title.includes(" | ")
@@ -55,6 +56,10 @@ function setPieceSource(pieceList) {
 
 function setVisiblePieces(pieceList) {
     visiblePieces = pieceList;
+}
+
+function setLightboxDetailsEnhancer(enhancer) {
+    lightboxDetailsEnhancer = enhancer;
 }
 
 function getVisiblePieceSlugs() {
@@ -336,6 +341,8 @@ function updateDetails(piece) {
     } else {
         detailsShopSection.hidden = true;
     }
+
+    if (lightboxDetailsEnhancer) { lightboxDetailsEnhancer(piece); }
 
     resetCopyLinkButton();
 }

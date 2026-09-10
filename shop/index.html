@@ -9,29 +9,99 @@
 
     <link rel="stylesheet" href="../css/site.css">
     <link rel="stylesheet" href="../css/shop.css">
+
+    <script src="../js/site.js" defer></script>
+    <script src="../js/pieces.js" defer></script>
+    <script src="../js/products.js" defer></script>
+    <script src="../js/shop-utils.js" defer></script>
+    <script src="../js/shop.js" defer></script>
 </head>
 
 <body>
     <header class="site-header">
-        <a class="site-name" href="../">Monty Jack</a>
+        <a class="site-name" href="../index.html">Monty Jack</a>
 
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="../">Home</a>
-            <a href="../gallery/">Gallery</a>
-            <a href="../shop/">Shop</a>
-            <a href="../#contact">Contact</a>
+            <a href="../index.html">Home</a>
+            <a href="../gallery/index.html">Gallery</a>
+            <a href="index.html" aria-current="page">Shop</a>
+            <a href="../contact/index.html">Contact</a>
         </nav>
     </header>
 
-    <main class="shop-page">
+    <main>
+        <section class="shop-page">
+            <header class="shop-header">
 
-        <h1>SHOP COMING SOON...</h1>
+                <div class="shop-toolbar">
+                    <div class="shop-filters" aria-label="Filter shop products">
+                        <button
+                            class="shop-filter-button active"
+                            data-filter="all"
+                            aria-pressed="true"
+                        >
+                            All
+                        </button>
 
+                        <button
+                            class="shop-filter-button"
+                            data-filter="original"
+                            aria-pressed="false"
+                        >
+                            Originals
+                        </button>
 
-        
+                        <button
+                            class="shop-filter-button"
+                            data-filter="print"
+                            aria-pressed="false"
+                        >
+                            Prints
+                        </button>
+
+                        <button
+                            class="shop-filter-button"
+                            data-filter="other"
+                            aria-pressed="false"
+                        >
+                            Other
+                        </button>
+                    </div>
+
+                    <label class="availability-control">
+                        <input
+                            id="availability-filter"
+                            type="checkbox"
+                        >
+
+                        <span>Available only</span>
+                    </label>
+                </div>
+
+                <div class="shop-status-row">
+                    <span
+                        class="shop-count"
+                        id="shop-count"
+                        aria-live="polite"
+                    ></span>
+                </div>
+            </header>
+
+            <div
+                class="shop-grid"
+                id="shop-grid"
+            ></div>
+
+            <div
+                class="shop-empty"
+                id="shop-empty"
+                hidden
+            >
+                <p>No products match these filters.</p>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <p>&copy; 2026 Monty Jack</p>
 
@@ -39,6 +109,5 @@
             <a href="https://instagram.com">Instagram</a>
         </nav>
     </footer>
-
-    <script src="../js/header.js"></script>
 </body>
+</html>

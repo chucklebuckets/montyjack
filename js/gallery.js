@@ -14,11 +14,12 @@ function handleGalleryImageError(image, imageContainer, piece) {
     imageContainer.appendChild(fallback);
 }
 
+
 // Render gallery w/ lazy loading
 function renderGallery(filter = "all") {
     galleryGrid.innerHTML = "";
 
-    const newestFirst = [...pieces].reverse();
+    const newestFirst = [...artworks].reverse();
 
     const visiblePieces = newestFirst.filter((piece) => {
         return (filter === "all" || piece.category === filter);

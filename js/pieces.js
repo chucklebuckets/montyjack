@@ -12,7 +12,7 @@ thumbnail - REQUIRED - Image used in the gallery grid
 images - REQUIRED - Images in the lightbox viewer
 alt - REQUIRED - Alt text if image cannot load or for text reader
 */
-const pieces = [
+const artworks = [
     {
         title: "shrew",
         slug: "shrew",
@@ -24,10 +24,6 @@ const pieces = [
         venue: {
             name: "Gallery FortyShrew",
             url: "https://example.com"
-        },
-        shop: {
-            status: "Sold",
-            url: "https://example.com",
         },
 
         thumbnail: "../assets/gallery/shrew/1.png",
@@ -67,3 +63,6 @@ const pieces = [
         alt: "DESCRIPTION OF CHEESE CUBE"
     },
 ];
+
+// Backward-compatible alias for shared code that still references `pieces`
+const pieces = artworks;
