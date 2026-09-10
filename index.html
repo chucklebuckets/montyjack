@@ -13,26 +13,39 @@
 
 <body>
     <header class="site-header">
-        <a class="site-name" href="/">Monty Jack</a>
+    <a class="site-logo" href="/" aria-label="Monty Jack">
+        <img src="assets/site/montyjack.png" alt="Monty Jack">
+    </a>
 
-        <nav class="site-nav" aria-label="Main navigation">
-            <a href="/">Home</a>
-            <a href="/gallery/">Gallery</a>
-            <a href="/shop/">Shop</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="/" aria-label="Home" aria-current="page">
+            <img src="assets/site/home.png" alt="Home">
+        </a>
+
+        <a href="/gallery/" aria-label="Gallery">
+            <img src="assets/site/gallery.png" alt="Gallery">
+        </a>
+
+        <a href="/shop/" aria-label="Shop">
+            <img src="assets/site/shop.png" alt="Shop">
+        </a>
+
+        <a href="/#contact/" aria-label="Contact">
+            <img src="assets/site/contact.png" alt="Contact">
+        </a>
+    </nav>
+</header>
 
     <main class="home-page">
         <!-- Selected artwork display -->
         <section class="selected-piece">
-            <img src="/assets/tree_shrew.png" alt="DESCRIBE WHATEVER ARTPIECE HERE">
+            <img src="/assets/gallery/Egg/1.webp" alt="DESCRIBE WHATEVER ARTPIECE HERE">
         </section>
 
         <!-- About me section with portrait display -->
         <section class="about-me">
             <div class="about-me-image">
-                <img src="/assets/dipper.png" alt="DESCRIBE YOUR OWN SELF HERE">
+                <img src="/assets/homepage/spaghetti.JPEG" alt="Monty Jack eating spaghetti">
             </div>
 
             <div class="about-me-text">
@@ -48,16 +61,13 @@
         <section class="current-venues">
             <h2>Current Venues</h2>
 
-            <p>This can kind of contain whatever. Maybe even cards of some kind w/ images of the venues. Or just text descriptions and addresses. Whatevs</p>
+            <p>Artprize 2026!</p>
         </section>
 
         <!-- Contact section -->
         <section class="contact" id="contact">
             <div class="contact-details">
                 <h2>Contact</h2>
-                <p>
-                    Send me emails about pizza and cheese and pillows:
-                </p>
                 <p>
                     email:<br>
                     <a href="mailto:hello@montyjack.com">hello@montyjack.com</a>
@@ -77,5 +87,45 @@
         </nav>
     </footer>
 
-    <script src="js/header.js"></script>
+    <!-- TEMP DEV POPUP -->
+<div
+    class="development-popup"
+    id="development-popup"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="development-popup-title"
+>
+    <div class="development-popup-content">
+
+        <button
+            class="development-popup-close"
+            id="development-popup-close"
+            type="button"
+            aria-label="Close development notice"
+        >
+            &times;
+        </button>
+
+        <h2 id="development-popup-title">
+            Site Under Development
+        </h2>
+
+        <p>
+            This website is currently under development.
+            Some pages, artwork, and shop features
+            may be incomplete or unavailable.
+        </p>
+
+        <button
+            class="development-popup-continue"
+            id="development-popup-continue"
+            type="button"
+        >
+            Continue
+        </button>
+
+    </div>
+</div>
+    
+    <script src="js/site.js"></script>
 </body>
