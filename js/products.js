@@ -28,16 +28,16 @@ Products are displayed newest-first, so continue adding new products to the bott
 */
 const products = [
     {
-        slug: "shrew-original",
-        pieceSlug: "shrew",
+        slug: "car-original",
+        pieceSlug: "car",
         type: "original",
-        price: 450,
-        availability: "sold",
+        price: 300,
+        availability: "available",
 
         shippingNotes: "PAINTS GOTTA DRY YADA YADA.",
         packaging: "Comes packaged in a storage box with a signed certificate of authenticity.",
         framing: "(Unframed)",
-        shippingPrice: "US Standard Shipping - $25",
+        shippingPrice: "US Standard Shipping - $15",
 
         checkout: {
             provider: "stripe",
