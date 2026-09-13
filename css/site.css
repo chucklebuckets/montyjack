@@ -1,3 +1,15 @@
+:root {
+    --red: #BF2827;
+
+    --dark-brown: #320F11;
+    --brown: #683632;
+
+    --cream: #F5F1EB;
+    --warm-grey-light: #E7E1DB;
+    --warm-grey: #D9D3CE;
+    --warm-grey-dark: #BDB1AC;
+}
+
 /* ---------- Reset / shared defaults ---------- */
 
 *,
@@ -14,6 +26,7 @@ body {
 
 html {
     font-family: Kazuki Reiwa, serif;
+    ;
 }
 
 body {
@@ -21,6 +34,8 @@ body {
     min-height: 100dvh;
 
     line-height: 1.5;
+
+    background-color: var(--cream);
 }
 
 main {
@@ -38,7 +53,6 @@ img {
 a {
     color: inherit;
 }
-
 /* ---------- Font ---------- */
 
 @font-face {
@@ -96,7 +110,7 @@ button:focus-visible {
 /* Applied once the page has been scrolled */
 
 .site-header.scrolled {
-    background-color: white;
+    background-color: var(--cream);
 
     box-shadow: 0 1px 8px rgb(0 0 0 / 0.08);
 }
@@ -169,11 +183,13 @@ button:focus-visible {
 .site-footer {
     display: flex;
     align-items: center;
-    gap: 2rem;
 
-    padding: 2rem;
+    line-height: 0;
 
-    background-color: #e8e8e8;
+    background-color: var(--cream);
+
+    background-color: var(--red);
+
 }
 
 .site-footer nav {

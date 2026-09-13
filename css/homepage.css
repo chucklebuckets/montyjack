@@ -1,3 +1,15 @@
+:root {
+    --red: #BF2827;
+
+    --dark-brown: #320F11;
+    --brown: #683632;
+
+    --cream: #F5F1EB;
+    --warm-grey-light: #E7E1DB;
+    --warm-grey: #D9D3CE;
+    --warm-grey-dark: #BDB1AC;
+}
+
 /* ---------- Selected artwork ---------- */
 
 .selected-piece {
@@ -13,25 +25,57 @@
 }
 
 
-/* ---------- About me ---------- */
+/* ---------- Shared homepage sections ---------- */
+
+.section-label {
+    margin: 0 0 0.75rem;
+
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    opacity: 0.55;
+
+    color: var(--brown);
+
+    
+}
+
+.section-heading {
+    margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: normal;
+    
+}
+
+
+/* ---------- About ---------- */
+
+.about-section {
+    width: 100%;
+
+    padding-block: clamp(5rem, 9vw, 9rem);
+
+    background-color: var(--warm-grey-light);
+}
 
 .about-me {
-    width: min(100% - 2rem, 1100px);
+    width: min(100% - 4rem, 1200px);
     margin-inline: auto;
-    padding-block: 4rem;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
-    gap: 4rem;
+    gap: clamp(3rem, 7vw, 7rem);
 }
 
-.about-me-text {
-    max-width: 600px;
-}
-
-.about-me-text h1 {
-    margin-top: 0;
+.about-me-image {
+    position: relative;
 }
 
 .about-me-image img {
@@ -39,39 +83,190 @@
     height: auto;
 }
 
+.about-me-text {
+    max-width: 580px;
+    color: var(--dark-brown)
+}
+
+.about-me-text h1 {
+    margin: 0 0 1.5rem;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: normal;
+    line-height: 1;
+}
+
+.about-me-text p:not(.section-label) {
+    max-width: 52ch;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 1rem;
+    padding-bottom: 0.15rem;
+
+    border-bottom: 1px solid currentColor;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.text-link:hover {
+    opacity: 0.6;
+
+    transform: translateX(3px);
+}
+
 
 /* ---------- Current venues ---------- */
 
-.current-venues {
-    width: min(100% - 2rem, 800px);
+.venues-section {
+    width: min(100% - 4rem, 1400px);
     margin-inline: auto;
-    padding-block: 4rem;
+
+    padding-block: clamp(5rem, 8vw, 8rem);
+
+    color: var(--dark-brown);
+}
+
+.venue-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.venue-card {
+    display: block;
+
+    min-width: 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.venue-card-image {
+    aspect-ratio: 4 / 3;
+
+    background-color: var(--warm-grey-light);
+
+    overflow: hidden;
+}
+
+.venue-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.35s ease;
+}
+
+.venue-card-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    padding-top: 1rem;
+}
+
+.venue-card-content h3 {
+    margin: 0;
+
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.venue-card-content p {
+    margin: 0.2rem 0 0;
+
+    font-size: 0.9rem;
+
+    opacity: 0.6;
+}
+
+.venue-card-arrow {
+    flex-shrink: 0;
+
+    font-size: 1.25rem;
+
+    transition: transform 0.2s ease;
+}
+
+.venue-card:hover {
+    transform: translateY(-4px);
+}
+
+.venue-card:hover .venue-card-image img {
+    transform: scale(1.025);
+}
+
+.venue-card:hover .venue-card-arrow {
+    transform: translate(3px, -3px);
 }
 
 
 /* ---------- Contact ---------- */
 
+.contact-section {
+    width: 100%;
+
+    padding-block: clamp(6rem, 10vw, 10rem);
+
+    background-color: var(--warm-grey-light);
+    color: var(--dark-brown);
+}
+
 .contact {
-    width: min(100% - 2rem, 800px);
+    width: min(100% - 4rem, 1000px);
     margin-inline: auto;
-    padding-block: 4rem;
 }
 
 .contact h2 {
-    margin-top: 0;
+    margin: 0;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: normal;
+    line-height: 1;
 }
 
-.contact p {
-    margin-bottom: 0.75rem;
+.contact-intro {
+    max-width: 550px;
+
+    margin: 2rem 0;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    opacity: 0.75;
 }
 
-.contact a {
+.contact-email {
     display: inline-block;
 
-    font-size: 1.1rem;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+
+    color: inherit;
 
     text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.25em;
+
+    transition: opacity 0.15s ease;
+}
+
+.contact-email:hover {
+    opacity: 0.6;
 }
 
 #contact {
@@ -79,19 +274,95 @@
 }
 
 
+/* ---------- Reveal animations ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 1000px) {
+
+    .venue-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 700px) {
 
+    .about-section {
+        padding-block: 4rem;
+    }
+
     .about-me {
+        width: min(100% - 2rem, 1200px);
+
         grid-template-columns: 1fr;
-        gap: 2rem;
-
-        padding-block: 3rem;
+        gap: 2.5rem;
     }
 
-    .current-venues,
+    .about-me-text h1 {
+        font-size: 2.75rem;
+    }
+
+
+    .venues-section {
+        width: min(100% - 2rem, 1400px);
+
+        padding-block: 4rem;
+    }
+
+    .venue-grid {
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+    }
+
+
+    .contact-section {
+        padding-block: 5rem;
+    }
+
     .contact {
-        padding-block: 3rem;
+        width: min(100% - 2rem, 1000px);
     }
+
+}
+
+
+/* ---------- Reduced motion support ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+
+        transition: none;
+    }
+
+    .venue-card,
+    .venue-card-image img,
+    .venue-card-arrow,
+    .text-link,
+    .contact-email {
+        transition: none;
+    }
+
 }

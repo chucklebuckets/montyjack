@@ -13,28 +13,28 @@
 
 <body>
     <header class="site-header">
-    <a class="site-logo" href="/" aria-label="Monty Jack">
-        <img src="assets/site/montyjack.png" alt="Monty Jack">
-    </a>
-
-    <nav class="site-nav" aria-label="Main navigation">
-        <a href="/" aria-label="Home" aria-current="page">
-            <img src="assets/site/home.png" alt="Home">
+        <a class="site-logo" href="/" aria-label="Monty Jack">
+            <img src="assets/site/montyjack.png" alt="Monty Jack">
         </a>
 
-        <a href="/gallery/" aria-label="Gallery">
-            <img src="assets/site/gallery.png" alt="Gallery">
-        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="/" aria-label="Home" aria-current="page">
+                <img src="assets/site/home.png" alt="Home">
+            </a>
 
-        <a href="/shop/" aria-label="Shop">
-            <img src="assets/site/shop.png" alt="Shop">
-        </a>
+            <a href="/gallery/" aria-label="Gallery">
+                <img src="assets/site/gallery.png" alt="Gallery">
+            </a>
 
-        <a href="/#contact/" aria-label="Contact">
-            <img src="assets/site/contact.png" alt="Contact">
-        </a>
-    </nav>
-</header>
+            <a href="/shop/" aria-label="Shop">
+                <img src="assets/site/shop.png" alt="Shop">
+            </a>
+
+            <a href="/#contact/" aria-label="Contact">
+                <img src="assets/site/contact.png" alt="Contact">
+            </a>
+        </nav>
+    </header>
 
     <main class="home-page">
         <!-- Selected artwork display -->
@@ -42,43 +42,130 @@
             <img src="/assets/gallery/egg/1.webp" alt="DESCRIBE WHATEVER ARTPIECE HERE">
         </section>
 
-        <!-- About me section with portrait display -->
-        <section class="about-me">
+        <!-- About me section -->
+    <section class="about-section reveal">
+        <div class="about-me">
             <div class="about-me-image">
-                <img src="/assets/homepage/spaghetti.JPEG" alt="Monty Jack eating spaghetti">
+            <img src="/assets/homepage/spaghetti.JPEG" alt="Monty Jack eating spaghetti">
+        </div>
+
+        <div class="about-me-text">
+            <p class="section-label">Tell me about</p>
+
+            <h1>Monty Jack</h1>
+
+            <p>
+                Monty Jack is a self-taught artist hailing from Indianapolis, IN, who works in charcoal, acrylic, and primarily oil paint. His work is often inspired by dreams, art history, music, and the absurdity of the mundane. His paintings combine surreal imagery, vivid colors, and theatrical black borders, making each piece feel like a staged world or artifact. By beginning pieces with familiar imagery and shifting them into stranger territory, he creates scenes where beauty, discomfort, and curiosity coexist. Across his work, Monty is interested in how familiar things become strange, and how strange things can reveal something deeper in the viewer. He hopes to fill the world with tiny mythologies and allow others to find comfort in the absurd.
+            </p>
+
+            <h3>
+                And here he is eating campfire spaghetti.
+            </h3>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Current venues section -->
+<section class="venues-section reveal">
+
+    <div class="section-heading">
+        <p class="section-label">Where in the world is Monty Jack</p>
+        <h2>Venues</h2>
+    </div>
+
+    <div class="venue-grid">
+
+        <a
+            class="venue-card"
+            href="https://www.artprize.org/entries#77206"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="venue-card-image">
+                <img
+                    src="../assets/homepage/artprize.webp"
+                    alt="ArtPrize venue"
+                >
             </div>
 
-            <div class="about-me-text">
-                <h1>Monty Jack</h1>
+            <div class="venue-card-content">
+                <div>
+                    <h3>ArtPrize 2026 - Fountain Street Church</h3>
+                    <p>Grand Rapids, Michigan</p>
+                </div>
 
-                <p>Text here</p>
-                
-                <p>Text here</p>
+                <span class="venue-card-arrow" aria-hidden="true">
+                    ↗
+                </span>
             </div>
-        </section>
+        </a>
 
-        <!-- Current venues section -->
-        <section class="current-venues">
-            <h2>Current Venues</h2>
 
-            <p>Artprize 2026!</p>
-        </section>
+        <!--
+        Copy this block whenever you add another venue:
 
-        <!-- Contact section -->
-        <section class="contact" id="contact">
-            <div class="contact-details">
-                <h2>Contact</h2>
-                <p>
-                    email:<br>
-                    <a href="mailto:hello@montyjack.com">hello@montyjack.com</a>
-                </p>
+        <a
+            class="venue-card"
+            href="VENUE LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="venue-card-image">
+                <img
+                    src="/assets/homepage/venues/venue-name.webp"
+                    alt="Venue name"
+                >
             </div>
 
-        </section>
+            <div class="venue-card-content">
+                <div>
+                    <h3>Venue Name</h3>
+                    <p>City, State</p>
+                </div>
+
+                <span class="venue-card-arrow" aria-hidden="true">
+                    ↗
+                </span>
+            </div>
+        </a>
+        -->
+
+    </div>
+
+</section>
+
+
+<!-- Contact section -->
+<section class="contact-section reveal" id="contact">
+
+    <div class="contact">
+
+        <p class="section-label">Send a pigeon</p>
+
+        <h2>Contact</h2>
+
+        <p class="contact-intro">
+            For commissions, exhibitions, purchasing inquiries,
+            or anything else, feel free to reach out.
+        </p>
+
+        <a
+            class="contact-email"
+            href="mailto:hello@montyjack.com"
+        >
+            hello@montyjack.com
+        </a>
+
+    </div>
+
+</section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
+        <img src="../assets/site/footer.png">
         <p>&copy; 2026 Monty Jack</p>
 
         <nav aria-label="Social media platforms">
@@ -128,4 +215,8 @@
 </div>
     
     <script src="js/site.js"></script>
+
+    <!-- Cloudflare Web Analytics -->
+     <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a90dfcdf83304e1a97027aba6ba4aad4"}'></script>
+     <!-- End Cloudflare Web Analytics -->
 </body>
