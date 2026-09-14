@@ -1,3 +1,14 @@
+:root {
+    --red: #BF2827;
+
+    --dark-brown: #320F11;
+    --brown: #683632;
+
+    --cream: #F5F1EB;
+    --warm-grey-light: #E7E1DB;
+    --warm-grey: #D9D3CE;
+    --warm-grey-dark: #BDB1AC;
+}
 /* ---------- Gallery page ---------- */
 
 .gallery-page {
@@ -15,7 +26,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
-    color: red;
+    color: var(--red);
 }
 
 /* ---------- Gallery header ---------- */
@@ -118,7 +129,7 @@
 
     padding: 2rem;
 
-    background-color: #eeeeee;
+    background-color: var(--warm-grey-light);
 
     overflow: hidden;
 }

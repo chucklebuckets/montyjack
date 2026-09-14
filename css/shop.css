@@ -1,4 +1,15 @@
 /* ---------- Shop page ---------- */
+:root {
+    --red: #BF2827;
+
+    --dark-brown: #320F11;
+    --brown: #683632;
+
+    --cream: #F5F1EB;
+    --warm-grey-light: #E7E1DB;
+    --warm-grey: #D9D3CE;
+    --warm-grey-dark: #BDB1AC;
+}
 
 .shop-page {
     width: min(100% - 4rem, 1700px);
@@ -134,7 +145,7 @@
 
     padding: 1.4rem;
 
-    background-color: #eeeeee;
+    background-color: var(--warm-grey-light);
 
     overflow: hidden;
 }
