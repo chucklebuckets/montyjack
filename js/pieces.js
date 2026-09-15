@@ -112,7 +112,7 @@ const artworks = [
     {
         title: "Universal Expansion",
         slug: "0007",
-        date: "2024",
+        date: "Spring 2024",
         category: "fine",
         materials: "Oil on canvas",
         venue: {
@@ -130,7 +130,7 @@ const artworks = [
     {
         title: "Cicada Wedding",
         slug: "0008",
-        date: "2024",
+        date: "Fall 2024",
         category: "photo",
         materials: "Silver gelatin print",
 
@@ -139,23 +139,161 @@ const artworks = [
             "../assets/gallery/0008/1.webp",
         ],
 
-        alt: "Car flying through space"
+        alt: "Marriage being held by cicadas"
     },
     {
-        title: "UNNAMED",
-        slug: "desert",
-        date: "2024",
+        title: "Precipice",
+        slug: "0009",
+        date: "Fall 2024",
         category: "fine",
         materials: "Oil on canvas",
-        dimensions: "...",
-        description: "...",
 
-        thumbnail: "../assets/gallery/desert/1.webp",
+        thumbnail: "../assets/gallery/0009/1.webp",
         images: [
-            "../assets/gallery/desert/1.webp",
+            "../assets/gallery/0009/1.webp",
         ],
 
         alt: "Person crawling on desert planet under sun"
+    },
+    {
+        title: "Fishing for Fishies",
+        slug: "0010",
+        date: "Fall 2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0010/thumb.webp",
+        images: [
+            "../assets/gallery/0010/1.webp",
+        ],
+
+        alt: "Baby riding on Swedish Fish"
+    },
+    {
+        title: "Livestock",
+        slug: "0011",
+        date: "Fall 2024",
+        category: "fine",
+        materials: "Acrylic, charcoal, watercolor",
+
+        thumbnail: "../assets/gallery/0011/1.webp",
+        images: [
+            "../assets/gallery/0011/1.webp",
+        ],
+
+        alt: "..."
+    },
+    {
+        title: "Dinner Party",
+        slug: "0012",
+        date: "Fall 2024",
+        category: "fine",
+        materials: "Charcoal on paper",
+
+        thumbnail: "../assets/gallery/0012/thumb.webp",
+        images: [
+            "../assets/gallery/0012/1.webp",
+        ],
+
+        alt: "Humanoid creature on all fours"
+    },
+    {
+        title: "Sticky Situation",
+        slug: "0013",
+        date: "Fall 2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0013/thumb.webp",
+        images: [
+            "../assets/gallery/0013/1.webp",
+        ],
+
+        alt: "Baby in pool of honey"
+    },
+    {
+        title: "UNNAMED - DESERT",
+        slug: "0014",
+        date: "Fall 2024",
+        category: "fine",
+        materials: "Chalk pastel on paper",
+
+        thumbnail: "../assets/gallery/0014/1.webp",
+        images: [
+            "../assets/gallery/0014/1.webp",
+        ],
+
+        alt: "Vibrant desert"
+    },
+    {
+        title: "Snippet of Raft of the Medusa",
+        slug: "0017",
+        date: "Fall 2024",
+        category: "fine",
+        materials: "Oil pastel",
+
+        thumbnail: "../assets/gallery/0017/thumb.webp",
+        images: [
+            "../assets/gallery/0017/1.webp",
+        ],
+
+        alt: "A zoomed in snippet from the piece Raft of the Medusa"
+    },
+    {
+        title: "Boogie",
+        slug: "0018",
+        date: "Fall 2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0018/thumb.webp",
+        images: [
+            "../assets/gallery/0018/1.webp",
+        ],
+
+        alt: "Baby in nose"
+    },
+    {
+        title: "Morsels",
+        slug: "0020",
+        date: "Winter 2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0020/thumb.webp",
+        images: [
+            "../assets/gallery/0020/1.webp",
+        ],
+
+        alt: "Baby sitting on chocolate chips"
+    },
+    {
+        title: "Snack Crackle Pop",
+        slug: "0021",
+        date: "Winter 2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0021/thumb.webp",
+        images: [
+            "../assets/gallery/0021/1.webp",
+        ],
+
+        alt: "Thumbtacks in a cereal bowl"
+    },
+    {
+        title: "Accident",
+        slug: "0022",
+        date: "Winter 2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0022/thumb.webp",
+        images: [
+            "../assets/gallery/0022/1.webp",
+        ],
+
+        alt: "Hand"
     },
     {
         title: "UNNAMED",
