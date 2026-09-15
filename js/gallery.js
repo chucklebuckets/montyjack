@@ -14,7 +14,6 @@ function handleGalleryImageError(image, imageContainer, piece) {
     imageContainer.appendChild(fallback);
 }
 
-
 // Render gallery w/ lazy loading
 function renderGallery(filter = "all") {
     galleryGrid.innerHTML = "";

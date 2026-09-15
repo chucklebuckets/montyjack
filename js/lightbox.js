@@ -296,7 +296,7 @@ function updateDetails(piece) {
         detailsDimensions.textContent = piece.dimensions;
         detailsDimensionsRow.hidden = false;
     } else {
-        detailsDimensionsRow.hidden = true
+        detailsDimensionsRow.hidden = true;
     }
 
     // Artist statement/description

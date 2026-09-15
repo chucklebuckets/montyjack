@@ -14,89 +14,129 @@ alt - REQUIRED - Alt text if image cannot load or for text reader
 */
 const artworks = [
     {
-        title: "UNNAMED",
-        slug: "eye",
+        title: "UNNAMED - Eye",
+        slug: "0001",
         date: "2022",
         category: "fine",
         materials: "Charcoal on paper",
-        dimensions: "...",
-        description: "...",
 
-        thumbnail: "../assets/gallery/eye/1.webp",
+        thumbnail: "../assets/gallery/0001/1.webp",
         images: [
-            "../assets/gallery/eye/1.webp",
+            "../assets/gallery/0001/1.webp",
         ],
 
         alt: "Hands holding open eye"
     },
     {
-        title: "UNNAMED",
-        slug: "bus",
+        title: "Waiting",
+        slug: "0002",
         date: "2023",
         category: "fine",
         materials: "Colored pencil on paper",
-        dimensions: "...",
-        description: "...",
 
-        thumbnail: "../assets/gallery/bus/1.webp",
+        thumbnail: "../assets/gallery/0002/1.webp",
         images: [
-            "../assets/gallery/bus/1.webp",
+            "../assets/gallery/0002/1.webp",
         ],
 
         alt: "Bus in rain"
     },
     {
-        title: "HUNGER",
-        slug: "hunger",
-        date: "2023",
-        category: "fine",
-        materials: "Mixed media",
-        dimensions: "...",
-        description: "...",
-
-        thumbnail: "../assets/gallery/hunger/1.webp",
-        images: [
-            "../assets/gallery/hunger/1.webp",
-        ],
-
-        alt: "Green monster and orange blob"
-    },
-    {
-        title: "UNNAMED",
-        slug: "teeth",
+        title: "Everyone is Talking, No One is Listening",
+        slug: "0003",
         date: "2023",
         category: "fine",
         materials: "Oil on canvas",
-        dimensions: "...",
-        description: "...",
         venue: {
             name: "Madness! 2.0 - Gallery Forty-Two",
             //url: "..."
         },
-
-        thumbnail: "../assets/gallery/teeth/1.webp",
+        
+        thumbnail: "../assets/gallery/0003/1.webp",
         images: [
-            "../assets/gallery/teeth/1.webp",
+            "../assets/gallery/0003/1.webp",
         ],
 
         alt: "Ingrown teeth"
     },
     {
-        title: "UNNAMED",
-        slug: "car",
+        title: "All Tomorrows Hoodie",
+        slug: "0004",
+        date: "Winter 2023",
+        category: "misc",
+        materials: "Bleach, fabric",
+
+        thumbnail: "../assets/gallery/0004/1.webp",
+        images: [
+            "../assets/gallery/0004/1.webp",
+            "../assets/gallery/0004/2.webp",
+            "../assets/gallery/0004/3.webp",
+            "../assets/gallery/0004/4.webp",
+            "../assets/gallery/0004/5.webp",
+        ],
+
+        alt: "Green hoodie bleach painted with All Tomorrows figures"
+    },
+    {
+        title: "HUNGER",
+        slug: "0005",
+        date: "Winter 2023",
+        category: "fine",
+        materials: "Mixed media",
+
+        thumbnail: "../assets/gallery/0005/1.webp",
+        images: [
+            "../assets/gallery/0005/1.webp",
+        ],
+
+        alt: "Green monster and orange blob"
+    },
+    {
+        title: "Sleep Deprived",
+        slug: "0006",
+        date: "Winter 2023",
+        category: "fine",
+        materials: "Mixed media",
+        venue: {
+            name: "Madness! 2.0 - Gallery Forty-Two",
+            //url: "..."
+        },
+        
+        thumbnail: "../assets/gallery/0006/thumb.webp",
+        images: [
+            "../assets/gallery/0006/1.webp",
+        ],
+
+        alt: "Guy bent over"
+    },
+    {
+        title: "Universal Expansion",
+        slug: "0007",
         date: "2024",
         category: "fine",
         materials: "Oil on canvas",
-        dimensions: "...",
-        description: "...",
         venue: {
             name: "3rd Annual Art of Speed Juried Exhibition - Gallery Forty-Two",
             //url: "..."
         },
 
-        thumbnail: "../assets/gallery/car/1.webp",
+        thumbnail: "../assets/gallery/0007/1.webp",
         images: [
-            "../assets/gallery/car/1.webp",
+            "../assets/gallery/0007/1.webp",
+        ],
+
+        alt: "Car flying through space"
+    },
+    {
+        title: "Cicada Wedding",
+        slug: "0008",
+        date: "2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0008/thumb.webp",
+        images: [
+            "../assets/gallery/0008/1.webp",
         ],
 
         alt: "Car flying through space"

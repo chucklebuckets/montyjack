@@ -1,4 +1,14 @@
-/* ---------- Lightbox ---------- */
+:root {
+    --red: #BF2827;
+
+    --dark-brown: #320F11;
+    --brown: #683632;
+
+    --cream: #F5F1EB;
+    --warm-grey-light: #E7E1DB;
+    --warm-grey: #D9D3CE;
+    --warm-grey-dark: #BDB1AC;
+}/* ---------- Lightbox ---------- */
 
 .lightbox {
     --details-width: 380px;
@@ -288,7 +298,7 @@
     padding: 5rem 2rem 3rem;
 
     background: rgba(20, 20, 20, 0.98);
-    color: white;
+    color: var(--cream);
 
     overflow-y: auto;
 
@@ -329,6 +339,7 @@
 
 .details-content h2 {
     margin: 0;
+    
 }
 
 .details-date {
@@ -344,11 +355,16 @@
     margin-top: 1.5rem;
 }
 
+.details-meta-row[hidden] {
+    display: none;
+}
+
 .details-label {
     font-size: 0.8rem;
     text-transform: uppercase;
 
     opacity: 0.6;
+
 }
 
 .details-description,
