@@ -128,6 +128,23 @@ const artworks = [
         alt: "Car flying through space"
     },
     {
+        title: "UNTITLED",
+        slug: "0007a",
+        date: "Spring 2024",
+        category: "misc",
+        materials: "Fabric paint on denim",
+
+        thumbnail: "../assets/gallery/0007a/1.webp",
+        images: [
+            "../assets/gallery/0007a/1.webp",
+            "../assets/gallery/0007a/2.webp",
+            "../assets/gallery/0007a/3.webp",
+            "../assets/gallery/0007a/4.webp",
+        ],
+
+        alt: "Jeans with an orange snake creature painted on the leg"
+    },
+    {
         title: "Cicada Wedding",
         slug: "0008",
         date: "Fall 2024",
@@ -294,6 +311,76 @@ const artworks = [
         ],
 
         alt: "Hand"
+    },
+    {
+        title: "untitled",
+        slug: "0023",
+        date: "Winter 2024",
+        category: "sketch",
+        materials: "Pen",
+
+        thumbnail: "../assets/gallery/0023/thumb.webp",
+        images: [
+            "../assets/gallery/0023/1.webp",
+        ],
+
+        alt: "Big frog on top of a hot air balloon"
+    },
+    {
+        title: "untitled",
+        slug: "0024",
+        date: "Winter 2024",
+        category: "fine",
+        materials: "Gouache, colored pencil",
+
+        thumbnail: "../assets/gallery/0024/thumb.webp",
+        images: [
+            "../assets/gallery/0024/1.webp",
+        ],
+
+        alt: "Guy lying in bed"
+    },
+    {
+        title: "untitled",
+        slug: "0025",
+        date: "Winter 2024",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0025/thumb.webp",
+        images: [
+            "../assets/gallery/0025/1.webp",
+        ],
+
+        alt: "..."
+    },
+    {
+        title: "untitled",
+        slug: "0026",
+        date: "Winter 2025",
+        category: "photo",
+        materials: "Silver gelatin print",
+
+        thumbnail: "../assets/gallery/0026/thumb.webp",
+        images: [
+            "../assets/gallery/0026/1.webp",
+        ],
+
+        alt: "..."
+    },
+    {
+        title: "untitled",
+        slug: "0027",
+        date: "Winter 2025",
+        category: "fine",
+        materials: "Colored pencil on paper",
+
+        thumbnail: "../assets/gallery/0027/thumb.webp",
+        images: [
+            "../assets/gallery/0027/1.webp",
+        ],
+
+        alt: "..."
     },
     {
         title: "UNNAMED",
