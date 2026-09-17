@@ -98,7 +98,7 @@ button:focus-visible {
     justify-content: space-between;
     gap: 2rem;
 
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
 
     background-color: transparent;
 
@@ -113,7 +113,7 @@ button:focus-visible {
 .site-header.scrolled {
     background-color: var(--cream);
 
-    box-shadow: 0 1px 8px rgb(0 0 0 / 0.08);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
 }
 
 
@@ -131,7 +131,7 @@ button:focus-visible {
     display: block;
 
     width: auto;
-    height: 6rem;
+    height: 8rem;
 }
 
 
