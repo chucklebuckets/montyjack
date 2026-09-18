@@ -54,6 +54,75 @@ img {
 a {
     color: inherit;
 }
+
+body.menu-open {
+    overflow: hidden;
+}
+
+/* ---------- Selection / dragging ---------- */
+
+/*
+    Prevent images and interface elements from
+    being accidentally highlighted or dragged.
+*/
+
+img {
+    user-select: none;
+    -webkit-user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+button,
+.site-header,
+.site-nav,
+.site-menu,
+.site-menu-toggle,
+.site-menu-close,
+.gallery-piece,
+.gallery-piece-button,
+.gallery-piece-image,
+.gallery-piece-info,
+.shop-product-link,
+.shop-product-image,
+.venue-card {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/*
+    Prevent links/images from being dragged
+    around by the browser.
+*/
+
+a,
+img {
+    -webkit-user-drag: none;
+}
+
+
+/*
+    Written content should still behave like
+    normal selectable text.
+*/
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+blockquote,
+.contact-email,
+.product-info,
+.details-content {
+    user-select: text;
+    -webkit-user-select: text;
+}
+
 /* ---------- Font ---------- */
 
 @font-face {
@@ -98,7 +167,7 @@ button:focus-visible {
     justify-content: space-between;
     gap: 2rem;
 
-    padding: 1rem 2rem;
+    padding: 0rem 2rem;
 
     background-color: transparent;
 
@@ -132,22 +201,27 @@ button:focus-visible {
 
     width: auto;
     height: 8rem;
+
+    max-width: none;
 }
 
 
-/* ---------- Navigation ---------- */
+/* ---------- Desktop navigation ---------- */
 
 .site-nav {
     display: flex;
     align-items: center;
+    gap: 1.75rem;
+
     padding-right: 1rem;
-    
 }
 
 .site-nav a {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
 
     text-decoration: none;
 }
@@ -158,13 +232,12 @@ button:focus-visible {
     width: auto;
     height: 4rem;
 
+    max-width: none;
+
     transition:
         opacity 0.15s ease,
         transform 0.15s ease;
 }
-
-
-/* Small hover response */
 
 .site-nav a:hover img {
     opacity: 0.7;
@@ -172,13 +245,269 @@ button:focus-visible {
     transform: translateY(-1px);
 }
 
-
-/* Current page */
-
 .site-nav a[aria-current="page"] img {
     opacity: 0.6;
 }
 
+/* ---------- Hamburger ---------- */
+
+.site-menu-toggle {
+    display: none;
+
+    width: 3rem;
+    height: 3rem;
+
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+    color: var(--dark-brown);
+
+    cursor: pointer;
+}
+
+.site-menu-toggle span {
+    display: block;
+
+    width: 2rem;
+    height: 2px;
+
+    margin: 0.35rem auto;
+
+    background-color: currentColor;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+/* ---------- Side navigation ---------- */
+
+.site-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    width: min(82vw, 420px);
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    background-color: var(--cream);
+    color: var(--dark-brown);
+
+    opacity: 0;
+    transform: translateX(100%);
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+}
+
+.site-menu[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-menu.menu-open {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.site-menu::backdrop {
+    background-color: rgb(50 15 17 / 0.55);
+}
+
+
+/* ---------- Side navigation close ---------- */
+
+.site-menu-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+
+    z-index: 1;
+
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+    color: var(--dark-brown);
+
+    font: inherit;
+    font-size: 2.5rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.site-menu-close:hover {
+    opacity: 0.6;
+
+    transform: rotate(4deg);
+}
+
+
+/* ---------- Side navigation contents ---------- */
+
+.site-menu-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 5rem 2.5rem 3rem;
+}
+
+.site-menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 0.75rem;
+}
+
+.site-menu-nav a {
+    display: block;
+
+    text-decoration: none;
+}
+
+.site-menu-nav img {
+    display: block;
+
+    width: auto;
+    height: 3.75rem;
+
+    max-width: none;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.site-menu-nav a:hover img {
+    opacity: 0.7;
+
+    transform: translateX(-3px);
+}
+
+.site-menu-nav a[aria-current="page"] img {
+    opacity: 0.6;
+}
+
+
+/* ---------- Side navigation social links ---------- */
+
+.site-menu-socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    margin-top: 2rem;
+}
+
+.site-menu-socials a {
+    display: block;
+}
+
+.site-menu-socials img {
+    display: block;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.site-menu-socials a:hover img {
+    opacity: 0.65;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Collapsed header ---------- */
+
+/*
+    This intentionally switches before phone size.
+    Increase this number if the desktop navigation
+    starts feeling cramped sooner.
+*/
+
+@media (max-width: 1500px) {
+
+    .site-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .site-nav {
+        display: none;
+    }
+
+    .site-menu-toggle {
+        display: block;
+
+        flex-shrink: 0;
+    }
+
+    .site-logo img {
+        height: 5rem;
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .site-logo img {
+        height: 4rem;
+    }
+
+    .site-menu {
+        width: min(88vw, 380px);
+    }
+
+    .site-menu-content {
+        padding: 5rem 2rem 2rem;
+    }
+
+    .site-menu-nav img {
+        height: 3rem;
+    }
+
+    .site-menu-socials img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+}
 
 /* ---------- Footer ---------- */
 

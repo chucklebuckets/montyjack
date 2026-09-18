@@ -19,28 +19,126 @@
 
 <body>
     <header class="site-header">
-        <a class="site-logo" href="/" aria-label="Monty Jack">
-            <img src="../../assets/site/montyjack.png" alt="Monty Jack">
+
+    <a class="site-logo" href="/" aria-label="Monty Jack">
+        <img src="/assets/site/montyjack.png" alt="Monty Jack">
+    </a>
+
+
+    <!-- Desktop navigation -->
+    <nav class="site-nav" aria-label="Main navigation">
+
+        <a href="/" aria-label="Home">
+            <img src="/assets/site/home.png" alt="">
         </a>
 
-        <nav class="site-nav" aria-label="Main navigation">
-            <a href="../../" aria-label="Home">
-                <img src="../../assets/site/home.png" alt="Home">
+        <a href="/gallery/" aria-label="Gallery">
+            <img src="/assets/site/gallery.png" alt="">
+        </a>
+
+        <a
+            href="/shop/"
+            aria-label="Shop"
+            aria-current="page"
+        >
+            <img src="/assets/site/shop.png" alt="">
+        </a>
+
+        <a href="/#contact" aria-label="Contact">
+            <img src="/assets/site/contact.png" alt="">
+        </a>
+
+    </nav>
+
+
+    <!-- Hamburger -->
+    <button
+        class="site-menu-toggle"
+        id="site-menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="site-menu"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<!-- Collapsed navigation -->
+<dialog
+    class="site-menu"
+    id="site-menu"
+>
+    <button
+        class="site-menu-close"
+        id="site-menu-close"
+        type="button"
+        aria-label="Close navigation"
+    >
+        &times;
+    </button>
+
+
+    <div class="site-menu-content">
+
+        <nav
+            class="site-menu-nav"
+            aria-label="Collapsed navigation"
+        >
+            <a href="/" aria-label="Home">
+                <img src="/assets/site/home.png" alt="">
             </a>
 
-            <a href="../../gallery/" aria-label="Gallery">
-                <img src="../../assets/site/gallery.png" alt="Gallery">
+            <a href="/gallery/" aria-label="Gallery">
+                <img src="/assets/site/gallery.png" alt="">
             </a>
 
-            <a href="../shop/" aria-label="Shop" aria-current="page">
-                <img src="../../assets/site/shop.png" alt="Shop">
+            <a
+                href="/shop/"
+                aria-label="Shop"
+                aria-current="page"
+            >
+                <img src="/assets/site/shop.png" alt="">
             </a>
 
-            <a href="../../#contact/" aria-label="Contact">
-                <img src="../../assets/site/contact.png" alt="Contact">
+            <a href="/#contact" aria-label="Contact">
+                <img src="/assets/site/contact.png" alt="">
             </a>
         </nav>
-    </header>
+
+
+        <div class="site-menu-socials">
+
+            <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+            >
+                <img
+                    src="/assets/site/instagram.png"
+                    alt=""
+                >
+            </a>
+
+            <a
+                href="mailto:hello@montyjack.com"
+                aria-label="Email"
+            >
+                <img
+                    src="/assets/site/email.png"
+                    alt=""
+                >
+            </a>
+
+        </div>
+
+    </div>
+</dialog>
 
     <main class="product-page">
         <nav class="product-breadcrumb" aria-label="Breadcrumb">

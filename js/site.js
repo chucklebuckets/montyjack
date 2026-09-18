@@ -64,3 +64,60 @@ if ("IntersectionObserver" in window) {
     });
 
 }
+
+
+
+// Navigation stuff
+// Side navigation
+const siteMenu = document.getElementById("site-menu");
+const siteMenuToggle = document.getElementById("site-menu-toggle");
+const siteMenuClose = document.getElementById("site-menu-close");
+
+function openSiteMenu() {
+    siteMenu.showModal();
+
+    document.body.classList.add("menu-open");
+
+    siteMenuToggle.setAttribute("aria-expanded", "true");
+
+    requestAnimationFrame(() => {
+        siteMenu.classList.add("menu-open");
+    });
+}
+
+function closeSiteMenu() {
+    siteMenu.classList.remove("menu-open");
+
+    siteMenuToggle.setAttribute("aria-expanded", "false");
+
+    setTimeout(() => {
+        siteMenu.close();
+
+        document.body.classList.remove("menu-open");
+    }, 250);
+}
+
+siteMenuToggle.addEventListener("click", openSiteMenu);
+siteMenuClose.addEventListener("click", closeSiteMenu);
+
+
+// Close when clicking outside the panel
+siteMenu.addEventListener("click", (event) => {
+    if (event.target === siteMenu) {
+        closeSiteMenu();
+    }
+});
+
+
+// Close after choosing a navigation item
+siteMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeSiteMenu);
+});
+
+
+// Native Escape handling
+siteMenu.addEventListener("cancel", (event) => {
+    event.preventDefault();
+
+    closeSiteMenu();
+});
