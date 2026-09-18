@@ -14,7 +14,7 @@ alt - REQUIRED - Alt text if image cannot load or for text reader
 */
 const artworks = [
     {
-        title: "UNNAMED - Eye",
+        title: "UNTITLED - Eye",
         slug: "0001",
         date: "2022",
         category: "fine",
@@ -66,7 +66,7 @@ const artworks = [
         category: "misc",
         materials: "Bleach, fabric",
 
-        thumbnail: "../assets/gallery/0004/1.webp",
+        thumbnail: "../assets/gallery/0004/thumb.webp",
         images: [
             "../assets/gallery/0004/1.webp",
             "../assets/gallery/0004/2.webp",
@@ -128,13 +128,13 @@ const artworks = [
         alt: "Car flying through space"
     },
     {
-        title: "UNTITLED",
+        title: "Creature Pants",
         slug: "0007a",
         date: "Spring 2024",
         category: "misc",
         materials: "Fabric paint on denim",
 
-        thumbnail: "../assets/gallery/0007a/1.webp",
+        thumbnail: "../assets/gallery/0007a/thumb.webp",
         images: [
             "../assets/gallery/0007a/1.webp",
             "../assets/gallery/0007a/2.webp",
@@ -229,7 +229,7 @@ const artworks = [
         alt: "Baby in pool of honey"
     },
     {
-        title: "UNNAMED - DESERT",
+        title: "UNTITLED - DESERT",
         slug: "0014",
         date: "Fall 2024",
         category: "fine",
@@ -313,7 +313,7 @@ const artworks = [
         alt: "Hand"
     },
     {
-        title: "untitled",
+        title: "Frog Balloon",
         slug: "0023",
         date: "Winter 2024",
         category: "sketch",
@@ -327,7 +327,7 @@ const artworks = [
         alt: "Big frog on top of a hot air balloon"
     },
     {
-        title: "untitled",
+        title: "Parasomnia",
         slug: "0024",
         date: "Winter 2024",
         category: "fine",
@@ -338,10 +338,10 @@ const artworks = [
             "../assets/gallery/0024/1.webp",
         ],
 
-        alt: "Guy lying in bed"
+        alt: "Guy melded into bed"
     },
     {
-        title: "untitled",
+        title: "Late Night Decisions",
         slug: "0025",
         date: "Winter 2024",
         category: "photo",
@@ -352,10 +352,10 @@ const artworks = [
             "../assets/gallery/0025/1.webp",
         ],
 
-        alt: "..."
+        alt: "Hair clippings in sink"
     },
     {
-        title: "untitled",
+        title: "Maturity",
         slug: "0026",
         date: "Winter 2025",
         category: "photo",
@@ -366,10 +366,10 @@ const artworks = [
             "../assets/gallery/0026/1.webp",
         ],
 
-        alt: "..."
+        alt: "Kid with fake mustache scratching chin"
     },
     {
-        title: "untitled",
+        title: "Greed",
         slug: "0027",
         date: "Winter 2025",
         category: "fine",
@@ -380,7 +380,35 @@ const artworks = [
             "../assets/gallery/0027/1.webp",
         ],
 
-        alt: "..."
+        alt: "Personification of greed"
+    },
+    {
+        title: "Maturity II",
+        slug: "0028",
+        date: "Spring 2025",
+        category: "photo",
+        materials: "Silver gelatin print, ink",
+
+        thumbnail: "../assets/gallery/0028/thumb.webp",
+        images: [
+            "../assets/gallery/0028/1.webp",
+        ],
+
+        alt: "Kid putting on lipstick"
+    },
+    {
+        title: "Untitled",
+        slug: "0029",
+        date: "Spring 2025",
+        category: "3d",
+        materials: "Toilet paper, paint",
+
+        thumbnail: "../assets/gallery/0029/thumb.webp",
+        images: [
+            "../assets/gallery/0029/1.webp",
+        ],
+
+        alt: "Kid putting on lipstick"
     },
     {
         title: "UNNAMED",
@@ -397,22 +425,6 @@ const artworks = [
         ],
 
         alt: "People on phones"
-    },
-    {
-        title: "UNNAMED",
-        slug: "tv",
-        date: "2025",
-        category: "fine",
-        materials: "Watercolor, charcoal, and acrylic on paper",
-        dimensions: "...",
-        description: "...",
-
-        thumbnail: "../assets/gallery/tv/1.webp",
-        images: [
-            "../assets/gallery/tv/1.webp",
-        ],
-
-        alt: "First person perspective of overweight man watching tv in trashed room"
     },
     {
         title: "UNNAMED",

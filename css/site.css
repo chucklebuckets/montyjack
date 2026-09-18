@@ -141,6 +141,7 @@ button:focus-visible {
     display: flex;
     align-items: center;
     padding-right: 1rem;
+    
 }
 
 .site-nav a {
