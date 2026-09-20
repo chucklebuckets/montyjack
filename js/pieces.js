@@ -764,7 +764,7 @@ const artworks = [
         title: "Jättimato",
         slug: "0047",
         date: "Summer 2025",
-        category: "other",
+        category: "misc",
         materials: "Fabric, Poly-Fil",
 
         thumbnail: "../assets/gallery/0047/thumb.webp",
