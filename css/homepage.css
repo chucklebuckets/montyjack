@@ -188,6 +188,14 @@
     font-weight: normal;
 }
 
+.venue-card-content h4 {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
 .venue-card-content p {
     margin: 0.2rem 0 0;
 
