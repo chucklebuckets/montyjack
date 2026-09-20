@@ -77,7 +77,7 @@ const artworks = [
         materials: "Oil on canvas",
         venue: {
             name: "Madness! 2.0 - Gallery Forty-Two",
-            //url: "..."
+            url: "https://www.galleryfortytwo.com/madness-2024"
         },
         
         thumbnail: "../assets/gallery/0003/thumb.webp",
@@ -127,7 +127,7 @@ const artworks = [
         materials: "Mixed media",
         venue: {
             name: "Madness! 2.0 - Gallery Forty-Two",
-            //url: "..."
+            url: "https://www.galleryfortytwo.com/madness-2024"
         },
         
         thumbnail: "../assets/gallery/0006/thumb.webp",
