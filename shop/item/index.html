@@ -7,14 +7,14 @@
 
     <title>Shop | Monty Jack</title>
 
-    <link rel="stylesheet" href="../../css/site.css">
-    <link rel="stylesheet" href="../../css/product.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/product.css">
 
-    <script src="../../js/site.js" defer></script>
-    <script src="../../js/pieces.js" defer></script>
-    <script src="../../js/products.js" defer></script>
-    <script src="../../js/shop-utils.js" defer></script>
-    <script src="../../js/product.js" defer></script>
+    <script src="/js/site.js" defer></script>
+    <script src="/js/pieces.js" defer></script>
+    <script src="/js/products.js" defer></script>
+    <script src="/js/shop-utils.js" defer></script>
+    <script src="/js/product.js" defer></script>
 </head>
 
 <body>
@@ -114,7 +114,7 @@
         <div class="site-menu-socials">
 
             <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/monty_jack0/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -141,6 +141,13 @@
 </dialog>
 
     <main class="product-page">
+
+        <!-- NOTICE -->
+                <div class="shop-notice">
+                <h1>*Shop is unavailable while website is under development. Coming soon!</h1>
+            </div>
+
+
         <nav class="product-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Shop</a>
             <span aria-hidden="true">›</span>
@@ -330,13 +337,26 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <img src="../../assets/site/footer.png">
-        <p>&copy; 2026 Monty Jack</p>
+        <img class="site-footer-art" src="/assets/site/footer.png" alt="">
 
-        <nav aria-label="Social media platforms">
-            <a href="mailto:hello@montyjack.com">Email</a>
-            <a href="https://instagram.com">Instagram</a>
-        </nav>
+        <div class="site-footer-content">
+            <nav class="site-footer-socials" aria-label="Social media platforms">
+                <a
+                    href="https://www.instagram.com/monty_jack0/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <img src="/assets/site/instagram-filled.png" alt="">
+                </a>
+
+                <a href="mailto:hello@montyjack.com" aria-label="Email">
+                    <img src="/assets/site/email-filled.png" alt="">
+                </a>              
+            </nav>
+
+            <p>&copy; 2026 Monty Jack</p>
+        </div>
     </footer>
 
     <!-- Cloudflare Web Analytics -->

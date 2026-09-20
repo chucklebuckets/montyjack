@@ -12,23 +12,42 @@ updateSiteHeader();
 
 
 
-// Development popup
+/* ---------- Development popup ---------- */
+
 const developmentPopup = document.getElementById("development-popup");
 const developmentPopupClose = document.getElementById("development-popup-close");
 const developmentPopupContinue = document.getElementById("development-popup-continue");
 
-function closeDevelopmentPopup() {
-    developmentPopup.hidden = true;
+if (
+    developmentPopup &&
+    developmentPopupClose &&
+    developmentPopupContinue
+) {
+    function closeDevelopmentPopup() {
+        developmentPopup.hidden = true;
 
-    sessionStorage.setItem("developmentPopupSeen", "true");
+        sessionStorage.setItem(
+            "developmentPopupSeen",
+            "true"
+        );
+    }
+
+    if (
+        sessionStorage.getItem("developmentPopupSeen") === "true"
+    ) {
+        developmentPopup.hidden = true;
+    }
+
+    developmentPopupClose.addEventListener(
+        "click",
+        closeDevelopmentPopup
+    );
+
+    developmentPopupContinue.addEventListener(
+        "click",
+        closeDevelopmentPopup
+    );
 }
-
-if (sessionStorage.getItem("developmentPopupSeen") === "true") {
-    developmentPopup.hidden = true;
-}
-
-developmentPopupClose.addEventListener("click", closeDevelopmentPopup);
-developmentPopupContinue.addEventListener("click", closeDevelopmentPopup);
 
 // Section reveal animations
 const revealElements = document.querySelectorAll(".reveal");
@@ -68,56 +87,73 @@ if ("IntersectionObserver" in window) {
 
 
 // Navigation stuff
-// Side navigation
+/* ---------- Side navigation ---------- */
+
 const siteMenu = document.getElementById("site-menu");
 const siteMenuToggle = document.getElementById("site-menu-toggle");
 const siteMenuClose = document.getElementById("site-menu-close");
 
-function openSiteMenu() {
-    siteMenu.showModal();
+if (
+    siteMenu &&
+    siteMenuToggle &&
+    siteMenuClose
+) {
+    function openSiteMenu() {
+        siteMenu.showModal();
 
-    document.body.classList.add("menu-open");
+        document.body.classList.add("menu-open");
 
-    siteMenuToggle.setAttribute("aria-expanded", "true");
+        siteMenuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
 
-    requestAnimationFrame(() => {
-        siteMenu.classList.add("menu-open");
+        requestAnimationFrame(() => {
+            siteMenu.classList.add("menu-open");
+        });
+    }
+
+    function closeSiteMenu() {
+        siteMenu.classList.remove("menu-open");
+
+        siteMenuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        setTimeout(() => {
+            siteMenu.close();
+
+            document.body.classList.remove("menu-open");
+        }, 250);
+    }
+
+    siteMenuToggle.addEventListener(
+        "click",
+        openSiteMenu
+    );
+
+    siteMenuClose.addEventListener(
+        "click",
+        closeSiteMenu
+    );
+
+    siteMenu.addEventListener("click", (event) => {
+        if (event.target === siteMenu) {
+            closeSiteMenu();
+        }
+    });
+
+    siteMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener(
+            "click",
+            closeSiteMenu
+        );
+    });
+
+    siteMenu.addEventListener("cancel", (event) => {
+        event.preventDefault();
+
+        closeSiteMenu();
     });
 }
-
-function closeSiteMenu() {
-    siteMenu.classList.remove("menu-open");
-
-    siteMenuToggle.setAttribute("aria-expanded", "false");
-
-    setTimeout(() => {
-        siteMenu.close();
-
-        document.body.classList.remove("menu-open");
-    }, 250);
-}
-
-siteMenuToggle.addEventListener("click", openSiteMenu);
-siteMenuClose.addEventListener("click", closeSiteMenu);
-
-
-// Close when clicking outside the panel
-siteMenu.addEventListener("click", (event) => {
-    if (event.target === siteMenu) {
-        closeSiteMenu();
-    }
-});
-
-
-// Close after choosing a navigation item
-siteMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeSiteMenu);
-});
-
-
-// Native Escape handling
-siteMenu.addEventListener("cancel", (event) => {
-    event.preventDefault();
-
-    closeSiteMenu();
-});

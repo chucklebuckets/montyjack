@@ -28,76 +28,21 @@ Products are displayed newest-first, so continue adding new products to the bott
 */
 const products = [
     {
-        slug: "car-original",
-        pieceSlug: "car",
+        slug: "hypersomnia-original",
+        pieceSlug: "0019",
+
         type: "original",
-        price: 300,
-        availability: "available",
+        price: 1234,
+        availability: "unavailable",
 
-        shippingNotes: "PAINTS GOTTA DRY YADA YADA.",
-        packaging: "Comes packaged in a storage box with a signed certificate of authenticity.",
-        framing: "(Unframed)",
-        shippingPrice: "US Standard Shipping - $15",
-
-        checkout: {
-            provider: "stripe",
-            url: ""
-        }
-    },
-
-    {
-        slug: "shrew-print",
-        pieceSlug: "shrew",
-        type: "print",
-        price: 25,
-        availability: "available",
-
-        dimensions: "Choose size through Big Cartel",
-        materials: "Fine art print",
-        packaging: "Ships in protective print packaging.",
-        framing: "Unframed",
-        shippingPrice: "Calculated through Big Cartel",
-
-        checkout: {
-            provider: "bigcartel",
-            url: "",
-            variant: "Shrew"
-        }
-    },
-
-    {
-        slug: "cheesecube-print",
-        pieceSlug: "cheesecube",
-        type: "print",
-        price: 25,
-        availability: "available",
-
-        dimensions: "Choose size through Big Cartel",
-        materials: "Fine art print",
-        packaging: "Ships in protective print packaging.",
-        framing: "Unframed",
-        shippingPrice: "Calculated through Big Cartel",
-
-        checkout: {
-            provider: "bigcartel",
-            url: "",
-            variant: "cheesecube"
-        }
-    },
-
-    {
-        slug: "monster-original",
-        pieceSlug: "monster",
-        type: "original",
-        price: 600,
-        availability: "available",
+        dimensions: "16 × 20 in. (H × W)",
 
         packaging: "Comes packaged with a signed certificate of authenticity.",
         framing: "Unframed",
-        shippingPrice: "Included",
+        shippingPrice: "US Shipping $15",
 
         checkout: {
-            provider: "stripe",
+            provider: "Stripe",
             url: ""
         }
     },

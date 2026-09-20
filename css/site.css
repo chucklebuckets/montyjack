@@ -511,52 +511,121 @@ button:focus-visible {
 /* ---------- Footer ---------- */
 
 .site-footer {
-    display: flex;
-    align-items: center;
+    position: relative;
 
-    line-height: 0;
+    width: 100%;
+    height: 110px;
 
-    background-color: var(--cream);
+    overflow: hidden;
 
     background-color: var(--red);
-
 }
 
-.site-footer nav {
+
+/* ---------- Footer artwork ---------- */
+
+.site-footer-art {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* ---------- Footer contents ---------- */
+
+.site-footer-content {
+    position: absolute;
+    inset: 0;
+
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    text-align: center;
+}
+
+.site-footer-content p {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-size: 0.9rem;
+    line-height: 1;
 }
 
 
-/* ---------- Mobile ---------- */
+/* ---------- Footer social links ---------- */
+
+.site-footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.75rem;
+}
+
+.site-footer-socials a {
+    display: block;
+
+    text-decoration: none;
+}
+
+.site-footer-socials img {
+    display: block;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.site-footer-socials a:hover img {
+    opacity: 0.75;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Footer mobile ---------- */
 
 @media (max-width: 700px) {
 
-    .site-header {
-        gap: 1rem;
-
-        padding: 1rem;
-    }
-
-    .site-logo img {
-        height: 2rem;
-    }
-
-    .site-nav {
-        gap: 0.75rem;
-    }
-
-    .site-nav img {
-        height: 1.5rem;
-    }
-
     .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
+        height: 100px;
     }
-}
 
+    .site-footer-socials {
+        gap: 0.65rem;
+    }
+
+    .site-footer-socials img {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .site-footer-content p {
+        font-size: 0.8rem;
+    }
+
+}
 
 /* ---------- Reduced motion support ---------- */
 

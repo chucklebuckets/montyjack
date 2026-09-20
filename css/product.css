@@ -1,3 +1,15 @@
+:root {
+    --red: #BF2827;
+
+    --dark-brown: #320F11;
+    --brown: #683632;
+
+    --cream: #F5F1EB;
+    --warm-grey-light: #E7E1DB;
+    --warm-grey: #D9D3CE;
+    --warm-grey-dark: #BDB1AC;
+}
+
 /* ---------- Product page ---------- */
 
 .product-page {
@@ -59,7 +71,7 @@
 
     padding: 2rem;
 
-    background-color: #eeeeee;
+    background-color: var(--warm-grey-light);
 
     overflow: hidden;
 }
@@ -291,8 +303,8 @@
 
     padding: 0.9rem 1rem;
 
-    background: #111111;
-    color: white;
+    background: var(--dark-brown);
+    color: var(--cream);
 
     text-align: center;
     text-decoration: none;
@@ -465,4 +477,13 @@
         opacity: 1;
         transform: none;
     }
+}
+
+/* ---------- Development header ---------- */
+.shop-notice {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: var(--red);
 }

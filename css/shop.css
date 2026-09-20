@@ -398,3 +398,12 @@
         animation: none;
     }
 }
+
+/* ---------- Development header ---------- */
+.shop-notice {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: var(--red);
+}

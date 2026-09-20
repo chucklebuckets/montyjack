@@ -346,6 +346,7 @@ const artworks = [
         date: "Winter 2024",
         category: "fine",
         materials: "Oil on canvas",
+        dimensions: "16 × 20 in.",
 
         thumbnail: "../assets/gallery/0019/thumb.webp",
         images: [
