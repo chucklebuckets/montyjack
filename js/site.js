@@ -157,3 +157,53 @@ if (
         closeSiteMenu();
     });
 }
+
+
+/* ---------- Artwork zoom ---------- */
+
+const zoomableArtwork = document.querySelectorAll(
+    ".zoomable-artwork"
+);
+
+zoomableArtwork.forEach((image) => {
+
+    image.addEventListener("click", (event) => {
+
+        if (!window.matchMedia(
+            "(hover: hover) and (pointer: fine)"
+        ).matches) {
+            return;
+        }
+
+
+        /*
+            Clicking a zoomed image returns it
+            to its normal size.
+        */
+
+        if (image.classList.contains("is-zoomed")) {
+            image.classList.remove("is-zoomed");
+
+            return;
+        }
+
+
+        /*
+            Find the exact point that was clicked
+            and zoom toward it.
+        */
+
+        const bounds = image.getBoundingClientRect();
+
+        const x =
+            ((event.clientX - bounds.left) / bounds.width) * 100;
+
+        const y =
+            ((event.clientY - bounds.top) / bounds.height) * 100;
+
+        image.style.transformOrigin = `${x}% ${y}%`;
+
+        image.classList.add("is-zoomed");
+    });
+
+});

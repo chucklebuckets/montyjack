@@ -370,7 +370,7 @@ const artworks = [
         alt: "Baby sitting on chocolate chips"
     },
     {
-        title: "Snack Crackle Pop",
+        title: "Snap Crackle Pop",
         slug: "0021",
         date: "Winter 2024",
         category: "photo",

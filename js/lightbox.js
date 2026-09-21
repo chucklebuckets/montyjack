@@ -23,6 +23,18 @@ const siteDocumentTitle = document.title.includes(" | ")
     ? document.title.split(" | ").at(-1)
     : document.title;
 
+// Artwork zoom reset
+function resetArtworkZoom(image) {
+    image.classList.remove("is-zoomed");
+
+    image.style.transition = "none";
+    image.style.transformOrigin = "";
+
+    requestAnimationFrame(() => {
+        image.style.transition = "";
+    });
+}
+
 const copyLinkButton = document.getElementById("copy-link-button");
 
 const detailsToggle = document.getElementById("details-toggle");
@@ -159,6 +171,8 @@ function updateLightbox(animateImage = true) {
 
 function loadLightboxImage(src, alt, piece, animate = true, revealLightbox = false) {
     const request = ++imageLoadRequest;
+
+    resetArtworkZoom(lightboxImage);
 
     const beginLoad = () => {
         lightboxImage.onload = null;
@@ -405,6 +419,8 @@ function updatePieceURL() {
 }
 
 function hideLightbox() {
+    resetArtworkZoom(lightboxImage);
+
     setDetailsOpen(false);
     lightbox.classList.remove("lightbox-ready");
     lightbox.hidden = true;

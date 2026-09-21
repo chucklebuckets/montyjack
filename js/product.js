@@ -42,6 +42,18 @@ const siteProductDocumentTitle = document.title.includes(" | ")
     ? document.title.split(" | ").at(-1)
     : document.title;
 
+// Artwork zoom reset
+function resetArtworkZoom(image) {
+    image.classList.remove("is-zoomed");
+
+    image.style.transition = "none";
+    image.style.transformOrigin = "";
+
+    requestAnimationFrame(() => {
+        image.style.transition = "";
+    });
+}
+
 // Product routing
 function getCurrentProductSlug() {
     return decodeURIComponent(window.location.hash.slice(1));
@@ -281,6 +293,8 @@ function updateProductImage(animate = true) {
 function loadProductImage(src, alt, animate = true) {
     const request = ++productImageRequest;
 
+    resetArtworkZoom(productMainImage);
+
     const beginLoad = () => {
         const preloadImage = new Image();
 
@@ -317,6 +331,8 @@ function loadProductImage(src, alt, animate = true) {
 }
 
 function showProductImageError() {
+    resetArtworkZoom(productMainImage);
+
     productMainImage.classList.remove("changing");
     productMainImage.hidden = true;
 
